@@ -1,10 +1,11 @@
 import { useState } from 'react'
+import Navbar from '../components/Navbar'
 
 function App() {
 
   return (
     <>
-      <h1 className='justify-self-center self-center'>Version 2.0 Starts</h1>
+      <Navbar/>
     </>
   )
 }
