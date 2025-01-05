@@ -1,0 +1,82 @@
+.hero-star {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.spline-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Large screens (laptops/desktops) */
+@media screen and (max-width: 1200px) {
+    .hero-star spline-viewer {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 768px) {
+    .hero-star spline-viewer {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* Small screens (mobile phones) */
+@media screen and (max-width: 480px) {
+    .hero-star {
+        height: 100vh;
+    }
+    
+    .spline-container {
+        width: 100%;
+        height: 100%;
+    }
+
+    .hero-above {
+        justify-content: flex-start;
+        margin-left: 10px;
+    }
+
+    .hero-below {
+        justify-content: flex-end;
+        margin-right: 10px;
+    }
+
+    .crafting-text, .your-text, .web-text, .presence-text {
+        font-size: 1.5rem;
+    }
+
+    .text-container {
+        gap: 1.5rem;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 320px) {
+    .hero-star spline-viewer {
+        transform: translate(-50%, -50%);
+    }
+}
+
+/* For shorter screens */
+@media screen and (max-height: 600px) {
+    .hero-star spline-viewer {
+        transform: scale(0.45);
+        transform-origin: center 40%;
+    }
+}
+
+.spline-container.loaded {
+    display: block;
+}
+
+.spline-container.hidden {
+    display: none;
+} 

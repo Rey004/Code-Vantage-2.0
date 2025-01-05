@@ -1,20 +1,20 @@
 @font-face {
   font-family: 'Inter';
-  src: url('public/fonts/Inter-Regular.woff2') format('truetype');
+  src: url('/fonts/Inter-Regular.woff2') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Nulshock';
-  src: url('public/fonts/Nulshock.ttf') format('truetype');
+  src: url('/fonts/Nulshock.woff2') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'JetBrainsMono';
-  src: url('public/fonts/JetBrainsMono.ttf') format('truetype');
+  src: url('/fonts/JetBrainsMono.woff2') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
