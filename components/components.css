@@ -1,0 +1,26 @@
+/* Navbar */
+nav{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navbar{
+    width: 60vw;
+    height: auto;
+    margin: 2rem 3rem;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8rem;
+  }
+
+  .logo{
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Button  */
