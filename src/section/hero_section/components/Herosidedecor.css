@@ -1,0 +1,72 @@
+.hero-side-decor {
+    position: absolute; /* Positioning relative to the parent */
+    z-index: 1; /* Ensure it appears above other content */
+}
+
+.hero-side-decor-desktop {
+    display: none; /* Hide by default */
+}
+
+.hero-side-decor-mobile {
+    display: none; /* Hide by default */
+}
+
+/* Media query for desktop devices */
+@media (min-width: 769px) {
+    .hero-side-decor-desktop {
+        display: block; /* Show on desktop */
+    }
+
+    .hero-side-decor-mobile {
+        display: none; /* Hide on desktop */
+    }
+
+    /* Positioning for desktop */
+    .hero-side-decor-left {
+        left: 0; /* Align to the left */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust for centering */
+    }
+
+    .hero-side-decor-right {
+        right: 0; /* Align to the right */
+        top: 50%; /* Center vertically */
+        transform: translateY(-50%); /* Adjust for centering */
+    }
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .hero-side-decor-desktop {
+        display: none; /* Hide on mobile */
+    }
+
+    .hero-side-decor-mobile {
+        display: block; /* Show on mobile */
+    }
+
+    /* Positioning for mobile */
+    .hero-side-decor-left {
+        left: 0; /* Center horizontally */
+        top: 10%;
+        width: 60%;
+        height: auto;
+    }
+
+    .hero-side-decor-right {
+        right: 0; /* Center horizontally */
+        bottom: 15%; /* Position below the hero star */
+        width: 60%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px){
+    .hero-side-decor-left {
+        top: 10%;
+    }
+
+    .hero-side-decor-right {
+        bottom: 30%;
+    }
+}
