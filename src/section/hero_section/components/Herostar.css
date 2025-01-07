@@ -3,6 +3,10 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .spline-container {
@@ -14,69 +18,48 @@
     transform: translate(-50%, -50%);
 }
 
-/* Large screens (laptops/desktops) */
-@media screen and (max-width: 1200px) {
-    .hero-star spline-viewer {
-        transform: translate(-50%, -50%);
-    }
+spline-viewer {
+    width: 100%;
+    height: 100vh;
+    border: none;
 }
 
-/* Medium screens (tablets) */
-@media screen and (max-width: 768px) {
-    .hero-star spline-viewer {
-        transform: translate(-50%, -50%);
-    }
+.hero-image {
+    display: none;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Small screens (mobile phones) */
-@media screen and (max-width: 480px) {
-    .hero-star {
-        height: 100vh;
-    }
-    
-    .spline-container {
-        width: 100%;
-        height: 100%;
+@media (max-width: 768px) {
+    spline-viewer {
+        display: none;
     }
 
-    .hero-above {
-        justify-content: flex-start;
-        margin-left: 10px;
+    .hero-image {
+        display: block;
+        margin-top: -50px;
+        height: 80%;
     }
+    @media (max-width: 480px) {
+        .hero-star {
+            flex-direction: column;
+            align-items: flex-start;
+            
+        }
 
-    .hero-below {
-        justify-content: flex-end;
-        margin-right: 10px;
-    }
+        .hero-image {
+            height: 50%;
+            margin-top: -30px;
+            transform: translate(0%, -15%);
+        }
 
-    .crafting-text, .your-text, .web-text, .presence-text {
-        font-size: 1.5rem;
+        spline-viewer {
+            display: none;
+        }
     }
 
     .text-container {
-        gap: 1.5rem;
+        margin-bottom: 20px;
     }
 }
-
-/* Extra small screens */
-@media screen and (max-width: 320px) {
-    .hero-star spline-viewer {
-        transform: translate(-50%, -50%);
-    }
-}
-
-/* For shorter screens */
-@media screen and (max-height: 600px) {
-    .hero-star spline-viewer {
-        transform: scale(0.45);
-        transform-origin: center 40%;
-    }
-}
-
-.spline-container.loaded {
-    display: block;
-}
-
-.spline-container.hidden {
-    display: none;
-} 

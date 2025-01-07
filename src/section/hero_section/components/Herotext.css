@@ -107,6 +107,12 @@
         font-size: 3.5rem;
         margin-top: -15px;
     }
+
+    #hero > .stroke{
+        -webkit-text-stroke: 1px white;
+        -moz-text-stroke: 1px white;
+    
+    }
 }
 
 /* Small screens (mobile phones) */
@@ -119,6 +125,7 @@
         width: 90%;
         gap: 1rem;
         padding: 0 15px;
+        transform: translate(-50%, -80%);
     }
 
 
@@ -140,6 +147,12 @@
 
     .crafting-text, .your-text, .web-text, .presence-text {
         letter-spacing: 1px;
+    }
+
+    #hero > .stroke{
+        -webkit-text-stroke: 0.8px white;
+        -moz-text-stroke: 0.8px white;
+    
     }
 }
 

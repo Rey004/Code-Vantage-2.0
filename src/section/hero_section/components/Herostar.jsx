@@ -1,77 +1,64 @@
-import React, { useState, useEffect } from 'react'
-import Spline from '@splinetool/react-spline'
-import './Herostar.css'
+import React, { useEffect } from 'react';
+import './Herostar.css';
 
 const Herostar = () => {
-  const [firstLoaded, setFirstLoaded] = useState(false)
-  const [secondLoaded, setSecondLoaded] = useState(false)
-  const [scale, setScale] = useState(1)
-
   useEffect(() => {
-    function removeWatermark() {
-      const watermarks = document.querySelectorAll('a[href*="spline.design"]');
-      watermarks.forEach(watermark => watermark.remove());
+    // Function to load the Spline viewer script
+    const loadSplineViewer = () => {
+      const script = document.createElement('script');
+      script.type = 'module';
+      script.src = 'https://unpkg.com/@splinetool/viewer@1.9.56/build/spline-viewer.js';
+      document.body.appendChild(script);
+
+      // Cleanup function to remove the script when the component unmounts
+      return () => {
+        document.body.removeChild(script);
+      };
+    };
+
+    loadSplineViewer();
+  }, []);
+
+
+
+  // Function to remove watermark from a spline viewer
+  function removeWatermark(splineViewer) {
+    const shadowRoot = splineViewer.shadowRoot;
+    if (shadowRoot) {
+      const logoElement = shadowRoot.querySelector("#logo");
+      if (logoElement) {
+        console.log("Watermark removed");
+        logoElement.remove();
+      }
     }
+  }
 
-    setTimeout(removeWatermark, 1000);
+  // Create a MutationObserver to watch for changes
+  const observer = new MutationObserver((mutations) => {
+    const splineViewers = document.querySelectorAll("spline-viewer");
+    splineViewers.forEach(removeWatermark);
+  });
 
-    const observer = new MutationObserver(removeWatermark);
-    observer.observe(document.body, {
-      childList: true,
-      subtree: true
-    });
+  // Start observing the document with the configured parameters
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
 
-    return () => observer.disconnect();
-  }, [])
+  // Also run on initial load
+  window.onload = function() {
+    const splineViewers = document.querySelectorAll("spline-viewer");
+    splineViewers.forEach(removeWatermark);
+  };
 
-  useEffect(() => {
-    const updateScale = () => {
-      const width = window.innerWidth
-      if (width > 1200) setScale(1)
-      else if (width > 768) setScale(0.7)
-      else if (width > 480) setScale(0.5)
-      else if (width > 320) setScale(0.4)
-      else setScale(0.3)
-    }
-
-    // Set initial scale
-    updateScale()
-
-    // Update scale on resize
-    window.addEventListener('resize', updateScale)
-    return () => window.removeEventListener('resize', updateScale)
-  }, [])
+  
 
   return (
     <div className="hero-star">
-      <div className={`spline-container ${firstLoaded ? 'loaded' : 'hidden'}`}>
-        <Spline 
-          scene="https://prod.spline.design/9BfOwhdn4yScJCLg/scene.splinecode"
-          onLoad={() => setFirstLoaded(true)}
-          style={{
-            position: "absolute",
-            width: '100%',
-            height: '100%',
-            transform: `scale(${scale})`,
-            transformOrigin: 'center center'
-          }}
-        />
-      </div>
-      <div className={`spline-container ${secondLoaded ? 'loaded' : 'hidden'}`}>
-        <Spline 
-          scene="https://prod.spline.design/EIVk0Xc3S3qLh3En/scene.splinecode"
-          onLoad={() => setSecondLoaded(true)}
-          style={{
-            position: "absolute",
-            width: '100%',
-            height: '100%',
-            transform: `scale(${scale})`,
-            transformOrigin: 'center center'
-          }}
-        />
-      </div>
+      <spline-viewer style={{position: "absolute"}} url="https://prod.spline.design/xxPn4nIw3-vfVA14/scene.splinecode"></spline-viewer>
+    <img src="/assets/hero-star.gif" alt="" className="hero-image"/>
     </div>
-  )
+  );
 }
 
-export default Herostar
+export default Herostar;
