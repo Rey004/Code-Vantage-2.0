@@ -27,7 +27,6 @@ const Herostar = () => {
     if (shadowRoot) {
       const logoElement = shadowRoot.querySelector("#logo");
       if (logoElement) {
-        console.log("Watermark removed");
         logoElement.remove();
       }
     }
