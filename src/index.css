@@ -1,3 +1,5 @@
+@import url(/src/components/components.css);
+
 @font-face {
   font-family: 'Inter';
   src: url('/fonts/Inter-Regular.woff2') format('truetype');
@@ -14,7 +16,7 @@
 
 @font-face {
   font-family: 'JetBrainsMono';
-  src: url('/fonts/JetBrainsMono.woff2') format('truetype');
+  src: url('/fonts/JetBrainsMono-Regular.woff2') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -25,19 +27,21 @@
   }
 }
 
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-html, body{
+html,
+body {
   width: 100%;
   height: 100%;
   background-color: black;
   color: white;
+  overflow-x: hidden;
 }
 
-#root{
+#root {
   width: 100%;
   height: 100%;
 }
