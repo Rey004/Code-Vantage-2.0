@@ -34,7 +34,7 @@ nav{
     height: 8vh;
     margin: 2rem 3rem;
     padding: 0 0.6rem;
-    background-color: rgba(255, 255, 255, 0.2); 
+    background-color: rgba(255, 255, 255, 0.1); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px); 
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -232,7 +232,7 @@ nav{
       height: 7.5vh;
       margin: 3rem 3rem;
       padding: 0;
-      background-color: rgba(255, 255, 255, 0.2); 
+      background-color: rgba(255, 255, 255, 0.1); 
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px); 
       border: 2px solid rgba(255, 255, 255, 0.3);
