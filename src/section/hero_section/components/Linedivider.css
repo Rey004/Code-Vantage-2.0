@@ -5,7 +5,7 @@
     align-items: center;
     height: 14vw;
     z-index: 1;
-    margin: 7vh 0;
+    margin: 7vh 0 0 0;
 }
 
 .line-divider-white{
@@ -17,19 +17,19 @@
 @media (max-width:1024px){
     .line-divider{
         height: 25vw;
-        margin: 7vh 0;
+        margin: 7vh 0 0 0;
     }
 }
 
 @media (max-width: 768px) {
     .line-divider{
-        margin: -3vh 0;
+        margin: -3vh 0 0 0;
     }
 }
 
 @media (max-width: 480px) {
     .line-divider{
         height: 45vw;
-        margin: -18vh 0;
+        margin: -18vh 0 0 0;
     }
 }
