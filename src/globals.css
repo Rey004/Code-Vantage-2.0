@@ -1,0 +1,13 @@
+* {
+  cursor: url('/public/assets/link.cur'), auto !important;
+}
+
+*:hover {
+  cursor: url('/public/assets/pointer.cur'), pointer !important;
+}
+
+/* For clickable elements */
+a:hover, button:hover, input[type="submit"]:hover, input[type="button"]:hover, 
+.clickable:hover, [role="button"]:hover{
+  cursor: url('/public/assets/link.cur'), pointer !important;
+}
