@@ -119,10 +119,11 @@ const Portfoliosection = () => {
       titleTl.kill();
       ScrollTrigger.getAll().forEach(st => st.kill());
     };
+    
   }, []);
 
   return (
-    <div className='portfolio-section'>
+    <sec className='portfolio-section'>
         <div className='portfolio-container'>
 
             {/* DESKTOP PORTFOLIO TITLE */}
@@ -167,7 +168,7 @@ const Portfoliosection = () => {
                  <Portfolioitem name="Rey Ventures" link="https://rey004.github.io/Rey-Ventures/" image="/assets/Rey-Ventures.webp" />
             </div>
         </div>
-    </div>
+    </sec>
   )
 }
 
