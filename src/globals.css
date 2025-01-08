@@ -8,6 +8,6 @@
 
 /* For clickable elements */
 a:hover, button:hover, input[type="submit"]:hover, input[type="button"]:hover, 
-.clickable:hover, [role="button"]:hover{
+.clickable:hover, [role="button"]:hover, .linkedin:hover, .instagram:hover{
   cursor: url('/assets/link.cur'), pointer !important;
 }

@@ -5,6 +5,7 @@ import Herosection from './section/hero_section/Herosection'
 import Aboutsection from './section/about_section/Aboutsection'
 import Fillertextsection from './section/Filler_text/Fillertextsection'
 import Faqsection from './section/faq_section/Faqsection'
+import Socialsection from './section/social_section/Socialsection'
 import './globals.css'
 
 function App() {
@@ -14,8 +15,9 @@ function App() {
       <Navbar/>
       <Herosection/>
       <Aboutsection/>
-      <Portfoliosection/>
       <Fillertextsection/>
+      <Portfoliosection/>
+      <Socialsection/>
       <Faqsection/>
     </>
   )
