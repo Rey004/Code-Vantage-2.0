@@ -7,14 +7,16 @@ import Linedivider from './components/Linedivider'
 
 const Herosection = () => {
   return (
+    <>
     <section id="hero" style={{marginTop: "10vh"}}>
         <Herotext textType="solid"/>
         <Herostar />
         <Herotext textType="stroke"/>
         <Herosidedecorright />
         <Herosidedecorleft />
-        <Linedivider />
     </section>
+    <Linedivider />
+    </>
   )
 }
 
