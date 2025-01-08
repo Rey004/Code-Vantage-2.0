@@ -1,0 +1,217 @@
+.filler-text-div{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+}
+
+.filler-bracketblue, .filler-bracketpurple{
+    position: absolute;
+    width: 110px;
+    height: auto;
+}
+
+.filler-starabove, .filler-starbelow{
+    position: absolute;
+}
+
+.filler-text{
+    font-family: Nulshock;
+    font-size: 5vw;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    position: relative;
+    margin: 5% 0px;
+}
+
+.filler-bracketblue{
+    top: -10px;
+    left: -10px;
+    rotate: 256deg;
+}
+
+.filler-bracketpurple{
+    bottom: -20px;
+    right: 40px;
+    rotate: 245deg;
+}
+
+.filler-starabove{
+    width: 200px;
+    height: auto;
+    top: -100px;
+    right: -90px;
+    rotate: 33deg;
+    z-index: 3;
+    filter: blur(1px);
+}
+
+.filler-starbelow{
+    width: 150px;
+    height: auto;
+    bottom: -73px;
+    left: -20px;
+    rotate: -12deg;
+    z-index: 1;
+    filter: blur(3px);
+}
+
+.filler-side-decor-left {
+    position: absolute;
+    top: 0%;
+}
+
+.filler-side-decor-right{
+    position: absolute;
+    bottom: 0%;
+}
+
+.filler-side-decor-left {
+    left: 0;
+}
+
+.filler-side-decor-right {
+    right: 0;
+}
+
+@media (max-width: 1200px) {
+    .filler-bracketblue {
+        width: 90px;
+        top: 2px;
+        left: 2px;
+    }
+
+    .filler-bracketpurple{
+        width: 90px;
+        bottom: -5px;
+        right: 46px;
+    }
+
+    .filler-starabove {
+        width: 160px;
+        top: -70px;
+        right: -62px;
+    }
+
+    .filler-starbelow {
+        width: 120px;
+        bottom: -53px;
+        left: -8px;
+    }
+
+    .filler-side-decor-left svg, .filler-side-decor-right svg {
+        width: 25vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .filler-bracketblue {
+        width: 70px;
+        top: 7px;
+        left: 12px;
+    }
+
+    .filler-bracketpurple{
+        width: 70px;
+        bottom: 0px;
+        right: 40px;
+    }
+
+    .filler-starabove {
+        width: 120px;
+        top: -45px;
+        right: -36px;
+    }
+    .filler-starbelow {
+        width: 90px;
+        bottom: -33px;
+        left: 2px;
+        filter: blur(2px);
+    }
+
+    .filler-side-decor-left {
+        position: absolute;
+        top: 0%;
+    }
+    
+    .filler-side-decor-right{
+        position: absolute;
+        bottom: 0%;
+    }
+
+    .filler-side-decor-left {
+        left: 10px;
+    }
+
+    .filler-side-decor-right {
+        right: 10px;
+    }
+
+    .filler-side-decor-left svg, .filler-side-decor-right svg {
+        width: 25vw;
+    }
+}
+
+@media (max-width: 480px) {
+    .filler-bracketblue {
+        width: 40px;
+        top: 15px;
+        left: 27px;
+    }
+
+    .filler-bracketpurple{
+        width: 40px;
+        bottom: 13px;
+        right: 42px;
+    }
+
+    .filler-starabove {
+        width: 80px;
+        top: -25px;
+        right: -8px;
+    }
+    .filler-starbelow {
+        width: 60px;
+        bottom: -12px;
+        left: 14px;
+        filter: blur(1.5px);
+    }
+
+    .filler-side-decor-left svg, .filler-side-decor-right svg {
+        width: 30vw;
+    }
+}
+
+@media (max-width: 425px){
+    .filler-bracketblue {
+        width: 40px;
+        top: 15px;
+        left: 27px;
+    }
+
+    .filler-bracketpurple{
+        width: 40px;
+        bottom: 13px;
+        right: 42px;
+    }
+
+    .filler-starabove {
+        width: 70px;
+        top: -17px;
+        right: -1px;
+    }
+    .filler-starbelow {
+        width: 50px;
+        bottom: -4px;
+        left: 20px;
+    }
+
+    .filler-side-decor-left svg, .filler-side-decor-right svg {
+        width: 35vw;
+    }
+}
