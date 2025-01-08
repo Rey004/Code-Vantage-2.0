@@ -1,3 +1,8 @@
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation;
+}
+
 .faqsection {
     width: 100%;
     overflow: hidden;
@@ -25,6 +30,10 @@
     margin-bottom: 10vh;
     border: 1.5px solid rgba(255, 255, 255, 0.3);
     background-color: rgba(255, 255, 255, 0.08); 
+    -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+
 }
 
 .faq {
@@ -35,12 +44,17 @@
     border-bottom: 1.5px solid rgba(255, 255, 255, 0.3);
     user-select: none;
     -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .question {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 100%;
 }
 
 i {
@@ -81,6 +95,87 @@ i {
     aspect-ratio: 1;
     background: radial-gradient(circle at left, #6a34e7, #ae4730);
     z-index: -1;
+    animation: floatGradient 8s ease-in-out infinite;
+}
+
+@keyframes floatGradient {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(20deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+/* Remove all highlight effects */
+.faq,
+.faq *,
+details,
+details *,
+summary,
+summary *,
+.question,
+.question *,
+.answer {
+    -webkit-tap-highlight-color: transparent !important;
+    -webkit-touch-callout: none !important;
+    -webkit-user-select: none !important;
+    -moz-user-select: none !important;
+    -ms-user-select: none !important;
+    user-select: none !important;
+    outline: none !important;
+    -webkit-appearance: none !important;
+    appearance: none !important;
+}
+
+/* Remove default details marker */
+details > summary {
+    list-style: none !important;
+}
+details > summary::-webkit-details-marker {
+    display: none !important;
+}
+
+/* Allow text selection only in answers */
+.answer {
+    user-select: text !important;
+    -webkit-user-select: text !important;
+    -moz-user-select: text !important;
+    -ms-user-select: text !important;
+}
+
+/* Remove focus styles */
+.faq:focus,
+details:focus,
+summary:focus,
+.question:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.faq-icon {
+  transition: transform 0.3s ease;
+  min-width: 15px;
+  min-height: 15px;
+  width: 15px;
+  height: 15px;
+  color: white;
+}
+
+/* Rotate the plus to make it a cross */
+details[open] .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-icon path {
+  transition: all 0.3s ease;
+}
+
+details[open] .faq-icon path {
+  stroke: rgba(255, 255, 255, 0.25);  /* Off-white color */
 }
 
 @media (max-width: 1024px) {
@@ -92,6 +187,10 @@ i {
         height: 60%;
         filter: blur(80px);
         opacity: 0.3;
+    }
+    .faq-icon{
+        height: 0.9vw;
+        width: 0.9vw;
     }
 }
 
@@ -111,6 +210,10 @@ i {
         filter: blur(80px);
         opacity: 0.3;
     }
+    .faq-icon{
+        height: 1.5vw;
+        width: 1.5vw;
+    }
 }
 
 @media (max-width: 425px) {
@@ -129,4 +232,57 @@ i {
         filter: blur(40px);
         opacity: 0.2;
     }
+    .faq-icon{
+        height: 3.5vw;
+        width: 3.5vw;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .faq-icon {
+    min-width: 16px;
+    min-height: 16px;
+    width: 16px;
+    height: 16px;
+  }
+  
+  .faq-icon path {
+    stroke-width: 2.5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .faq-icon {
+    min-width: 14px;
+    min-height: 14px;
+    width: 14px;
+    height: 14px;
+  }
+}
+
+.faq .answer {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-top: 0;
+}
+
+.faq[open] .answer {
+    max-height: 1000px; /* Large enough to fit content */
+    opacity: 1;
+    padding-top: 1rem;
+}
+
+/* Optional: Add animation for the question text */
+.faq[open] .question {
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease;
+}
+
+/* Ensure smooth rotation for the icon */
+.faq-icon {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }

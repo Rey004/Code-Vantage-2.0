@@ -135,61 +135,114 @@ const Faqsection = () => {
 <path d="M221.5 102.09L299.41 102.09C303.05 102.09 306 99.1397 306 95.4999V95.4999V81.4999V81.4999C306 77.0816 309.582 73.4999 314 73.4999L345 73.4999C349.419 73.4999 353 77.0816 353 81.4999V81.4999V95.4999V95.4999C353 99.1397 355.951 102.09 359.591 102.09H408.41C414.535 102.09 419.5 97.125 419.5 90.9999V90.9999V9.49988C419.5 4.80546 423.306 0.999878 428 0.999878V0.999878L505 0.999878" stroke="white" stroke-opacity="0.25"/>
         </svg>
 
-      <div className="faqs">
-        <details className="faq">
-          <summary className="question">
-            What technologies and platforms do you specialize in?
-            <i class="ri-add-fill"></i>
+      <div className="faqs" style={{ WebkitTapHighlightColor: 'transparent' }}>
+        <details className="faq" style={{ WebkitTapHighlightColor: 'transparent' }}>
+          <summary 
+            className="question" 
+            style={{ 
+              WebkitTapHighlightColor: 'transparent',
+              outline: 'none',
+              userSelect: 'none',
+              WebkitUserSelect: 'none',
+              MozUserSelect: 'none',
+              msUserSelect: 'none',
+              touchAction: 'manipulation'
+            }}
+          >
+            <span>What technologies and platforms do you specialize in?</span>
+            <svg 
+              className="faq-icon" 
+              width="20" 
+              height="20" 
+              viewBox="0 0 20 20" 
+              fill="none" 
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path 
+                className="vertical" 
+                d="M10 2L10 18" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round"
+              />
+              <path 
+                className="horizontal" 
+                d="M2 10L18 10" 
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round"
+              />
+            </svg>
           </summary>
-          <p class="answer">We specialize in HTML, CSS, JavaScript, React, WordPress,  Shopify and other popular web development frameworks and platforms.</p>
+          <p className="answer">
+            We specialize in HTML, CSS, JavaScript, React, WordPress, Shopify and other popular web development frameworks and platforms.
+          </p>
         </details>
 
         <details className="faq">
           <summary className="question">
-            I don't know which website platform is best for me. What should I do?
-            <i class="ri-add-fill"></i>
+            <span>I don't know which website platform is best for me. What should I do?</span>
+            <svg className="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path className="vertical" d="M10 2L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path className="horizontal" d="M2 10L18 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
           </summary>
-          <p class="answer">We assess your needs, goals, and budget to recommend the best website platform for you, ensuring it aligns with your business objectives and technical requirements.</p>
+          <p className="answer">We assess your needs, goals, and budget to recommend the best website platform for you, ensuring it aligns with your business objectives and technical requirements.</p>
         </details>
 
         <details className="faq">
           <summary className="question">
-            How long does it take to develop a website?
-            <i class="ri-add-fill"></i>
+            <span>How long does it take to develop a website?</span>
+            <svg className="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path className="vertical" d="M10 2L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path className="horizontal" d="M2 10L18 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
           </summary>
-          <p class="answer">The timeline varies depending on the complexity and requirements of the project. A typical website can take anywhere from 1 to 12 weeks.</p>
+          <p className="answer">The timeline varies depending on the complexity and requirements of the project. A typical website can take anywhere from 1 to 12 weeks.</p>
         </details>
 
         <details className="faq">
           <summary className="question">
-            How do you charge for your services?
-            <i class="ri-add-fill"></i>
+            <span>How do you charge for your services?</span>
+            <svg className="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path className="vertical" d="M10 2L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path className="horizontal" d="M2 10L18 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
           </summary>
-          <p class="answer">After an initial meeting to understand your needs and project requirements, we provide a tailored proposal.</p>
+          <p className="answer">After an initial meeting to understand your needs and project requirements, we provide a tailored proposal.</p>
         </details>
 
         <details className="faq">
           <summary className="question">
-            How do you ensure the security of my website?
-            <i class="ri-add-fill"></i>
+            <span>How do you ensure the security of my website?</span>
+            <svg className="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path className="vertical" d="M10 2L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path className="horizontal" d="M2 10L18 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
           </summary>
-          <p class="answer">We implement best security practices including SSL, regular updates, security audits, and firewalls to protect your website.</p>
+          <p className="answer">We implement best security practices including SSL, regular updates, security audits, and firewalls to protect your website.</p>
         </details>
 
         <details className="faq">
           <summary className="question">
-            How do you handle project changes or scope creep?
-            <i class="ri-add-fill"></i>
+            <span>How do you handle project changes or scope creep?</span>
+            <svg className="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path className="vertical" d="M10 2L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path className="horizontal" d="M2 10L18 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
           </summary>
-          <p class="answer">We follow a flexible approach to handle changes, and any scope changes will be discussed and approved before implementation.</p>
+          <p className="answer">We follow a flexible approach to handle changes, and any scope changes will be discussed and approved before implementation.</p>
         </details>
 
         <details className="faq">
           <summary className="question">
-            Do you offer post-launch support and maintenance?
-            <i class="ri-add-fill"></i>
+            <span>Do you offer post-launch support and maintenance?</span>
+            <svg className="faq-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path className="vertical" d="M10 2L10 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              <path className="horizontal" d="M2 10L18 10" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+            </svg>
           </summary>
-          <p class="answer">Yes, we provide free 6 months ongoing support and maintenance to ensure your website runs smoothly. Our support services include bug fixes, security monitoring, and performance optimization.</p>
+          <p className="answer">Yes, we provide free 6 months ongoing support and maintenance to ensure your website runs smoothly. Our support services include bug fixes, security monitoring, and performance optimization.</p>
         </details>
       </div>
       <div className="faqgradient"></div>
