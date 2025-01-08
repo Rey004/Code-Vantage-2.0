@@ -6,6 +6,7 @@
     align-items: center;
     overflow-x: hidden;
     overflow: hidden;
+    margin: 10vh 0;
 }
 
 .portfolio-container{
@@ -41,7 +42,7 @@
     flex-direction: column;
     z-index: 2;
     position: relative;
-    pointer-events: auto;
+    pointer-events: none;
     overflow-y: auto;
     scrollbar-width: none;  /* Firefox */
     -ms-overflow-style: none;  /* IE and Edge */
@@ -227,6 +228,9 @@
 
 /* Additional adjustments for smaller screens */
 @media (max-width: 425px) {
+    .portfolio-section{
+        margin: 6vh 0;
+    }
     .portfolio-svg{
         width: 70%;
         top: 10%;
