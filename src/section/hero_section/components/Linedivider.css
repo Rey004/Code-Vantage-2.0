@@ -1,0 +1,35 @@
+.line-divider{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 14vw;
+    z-index: 1;
+    margin: 7vh 0;
+}
+
+.line-divider-white{
+    width: 0.125vw;
+    height: 100%;
+    background: linear-gradient(to bottom, #D9D9D900, #B9B9B980, #FFFFFF, #B9B9B980,  #73737300);
+}
+
+@media (max-width:1024px){
+    .line-divider{
+        height: 25vw;
+        margin: 7vh 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .line-divider{
+        margin: -3vh 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .line-divider{
+        height: 45vw;
+        margin: -18vh 0;
+    }
+}
