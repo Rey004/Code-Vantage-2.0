@@ -1,0 +1,132 @@
+.faqsection {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16vh;
+    z-index: 2;
+    background-color: #000;
+    position: relative;
+}
+
+.faqs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    background-color: black;
+    padding: 30px 40px;
+    padding-bottom: 60px;
+    border-radius: 30px;
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.08); 
+}
+
+.faq {
+    width: 100%;
+    margin-top: 2em;
+    padding-bottom: 1rem;
+    cursor: pointer;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.3);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+i {
+    transition: transform 0.2s;
+}
+
+.question:hover {
+    cursor: pointer;
+}
+
+.answer {
+    padding-top: 1rem;
+    line-height: 1.6em;
+    font-size: 0.9rem;
+    transition: max-height 0.2s;
+    color: rgb(157, 156, 156);
+    user-select: text;
+    -webkit-user-select: text;
+}
+
+.faq-svg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    height: auto;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+.faqgradient {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    filter: blur(140px);
+    opacity: 0.35;
+    aspect-ratio: 1;
+    background: radial-gradient(circle at left, #6a34e7, #ae4730);
+    z-index: -1;
+}
+
+@media (max-width: 1024px) {
+    .faq-svg {
+        width: 60%;
+    }
+    .faqgradient {
+        width: 60%;
+        height: 60%;
+        filter: blur(80px);
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 768px) {
+    .faqs {
+        width: 85%;
+        /* padding: 20px 20px; */
+        border: 1.5px solid rgba(255, 255, 255, 0.3);
+        margin-top: 8vh;
+    }
+    .faq-svg {
+        width: 70%;
+    }
+    .faqgradient {
+        width: 70%;
+        height: 70%;
+        filter: blur(80px);
+        opacity: 0.3;
+    }
+}
+
+@media (max-width: 425px) {
+    .faqs {
+        width: 85%;
+        /* padding: 20px 20px; */
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        margin-top: 8vh;
+    }
+    .faq-svg {
+        width: 100%;
+    }
+    .faqgradient {
+        width: 90%;
+        height: 80%;
+        filter: blur(40px);
+        opacity: 0.2;
+    }
+}
