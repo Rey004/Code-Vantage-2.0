@@ -1,12 +1,13 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, memo } from 'react'
 import './socialsection.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitType from 'split-type'
+import { debounce } from 'lodash'
 
 gsap.registerPlugin(ScrollTrigger)
 
-const Socialsection = () => {
+const Socialsection = memo(() => {
   const headingRef = useRef(null);
 
   useEffect(() => {
@@ -24,12 +25,16 @@ const Socialsection = () => {
       opacity: 0
     });
 
+        // Determine start points based on viewport width
+        const startPointText = window.innerWidth < 768 ? 'top 100%' : 'top 80%';
+        const startPointSocial = window.innerWidth < 768 ? 'top 100%' : 'top 60%';
+
     // Create timeline for text reveal
     const textTl = gsap.timeline({
       scrollTrigger: {
         trigger: '.social-section',
-        start: 'top center',
-        toggleActions: 'play none none reverse'
+        start: startPointText, // Adjusted start position for better mobile support
+        // toggleActions: 'play none none reverse'
       }
     });
 
@@ -59,8 +64,8 @@ const Socialsection = () => {
     const socialTl = gsap.timeline({
       scrollTrigger: {
         trigger: '.social-section',
-        start: 'top center',
-        toggleActions: 'play none none reverse'
+        start: startPointSocial, // Adjusted start position for better mobile support
+        // toggleActions: 'play none none reverse'
       }
     });
 
@@ -112,10 +117,17 @@ const Socialsection = () => {
       delay: 0.5
     });
 
+    const updateScrollTrigger = debounce(() => {
+      ScrollTrigger.refresh();
+    }, 200);
+
+    window.addEventListener('resize', updateScrollTrigger);
+
     return () => {
       text.revert();
       // Cleanup
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+      window.removeEventListener('resize', updateScrollTrigger);
     };
   }, []);
 
@@ -138,6 +150,6 @@ const Socialsection = () => {
       </div>
     </section>
   )
-}
+})
 
 export default Socialsection
