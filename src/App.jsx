@@ -2,6 +2,7 @@ import React, { Suspense, lazy, useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Herosection from './section/hero_section/Herosection'
 import Aboutsection from './section/about_section/Aboutsection'
+import Footer from './components/Footer'
 import './globals.css'
 
 const Fillertextsection = lazy(() => import('./section/Filler_text/Fillertextsection'))
@@ -20,6 +21,7 @@ function App() {
   return (
     <>
       <Navbar />
+      <main>
       <Herosection />
       <Aboutsection />
       <Suspense fallback={<div></div>}>
@@ -28,6 +30,8 @@ function App() {
         <Socialsection />
         <Faqsection />
       </Suspense>
+      </main>
+      <Footer />
     </>
   )
 }
