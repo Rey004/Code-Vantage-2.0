@@ -3,6 +3,7 @@ import Navbar from './components/Navbar'
 import Herosection from './section/hero_section/Herosection'
 import Aboutsection from './section/about_section/Aboutsection'
 import Footer from './components/Footer'
+import Loader from './components/Loader'
 import './globals.css'
 
 const Fillertextsection = lazy(() => import('./section/Filler_text/Fillertextsection'))
@@ -20,6 +21,7 @@ function App() {
 
   return (
     <>
+      <Loader/>
       <Navbar />
       <main>
       <Herosection />
