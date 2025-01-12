@@ -1,6 +1,7 @@
 .about {
     width: 90%;
     margin: 16vh auto;
+    overflow-x: hidden; /* Ensure no horizontal scrollbar */
 }
 
 .about-div {
@@ -92,7 +93,6 @@
     column-gap: 10px;
 }
 
-
 /* About Description */
 .about-description {
     height: auto;
@@ -100,7 +100,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
 }
 
 .about-description ol {
@@ -170,7 +169,6 @@
     flex-direction: row;
     column-gap: 1em;
     align-items: center;
-
 }
 
 @media (max-width: 768px) {
@@ -186,7 +184,6 @@
         display: grid;
         grid-template-columns: 1fr 2fr;
     }
-
 
     .about-footer-pc-items {
         display: none;

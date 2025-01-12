@@ -26,7 +26,7 @@ nav{
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
+  z-index: 999;
   }
 
   .navbar {
@@ -355,10 +355,3 @@ nav{
       padding: 1rem 2.5rem;
     }
   }
-
-
-
-
-
-
-

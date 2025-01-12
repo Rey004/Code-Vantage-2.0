@@ -4,6 +4,8 @@ import Button from "../../components/Button"
 import Portfolioitem from './Portfolioitem'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { debounce, throttle } from 'lodash';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Portfoliosection = () => {
@@ -11,12 +13,14 @@ const Portfoliosection = () => {
     const title = document.querySelector('.portfolio-title, .portfolio-title-mobile');
     const content = document.querySelector('.portfolio-content, .portfolio-content-mobile');
     
-    content.addEventListener('wheel', (e) => {
+    const handleWheel = throttle((e) => {
       window.scrollBy({
         top: e.deltaY,
         behavior: 'smooth'
       });
-    });
+    }, 200);
+
+    content.addEventListener('wheel', handleWheel);
 
     // Pin the title section
     ScrollTrigger.create({
@@ -37,6 +41,16 @@ const Portfoliosection = () => {
     });
 
     // Set initial states for SVG elements
+    const svgTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.portfolio-section',
+        start: 'top 80%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+
+    svgTl
     gsap.set('.portfolio-svg path:not([mask])', { 
       strokeDasharray: function(i, el) {
         return el.getTotalLength();
@@ -59,10 +73,18 @@ const Portfoliosection = () => {
       opacity: 0
     });
 
-    // Main timeline for title animations
-    const titleTl = gsap.timeline();
 
-    titleTl
+    // Main timeline for title animations
+  const titleT1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '.portfolio-section',
+        start: 'top 60%',
+        end: 'bottom 20%',
+        toggleActions: 'play none none reverse'
+      }
+    });
+
+    titleT1
       .to('.portfolio-svg path:not([mask])', {
         strokeDashoffset: 0,
         duration: 1,
@@ -113,13 +135,16 @@ const Portfoliosection = () => {
         repeat: -1
       }, "-=0.5");
 
+    const handleResize = debounce(() => {
+      ScrollTrigger.refresh();
+    }, 200);
+
+    window.addEventListener('resize', handleResize);
+
     return () => {
-      content.removeEventListener('wheel', null);
-      dialTl.kill();
-      titleTl.kill();
-      ScrollTrigger.getAll().forEach(st => st.kill());
+      content.removeEventListener('wheel', handleWheel);
+      window.removeEventListener('resize', handleResize);
     };
-    
   }, []);
 
   return (

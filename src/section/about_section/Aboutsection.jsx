@@ -6,7 +6,7 @@ import './Aboutsection.css';
 
 const Aboutsection = () => {
   return (
-    <section class="about">
+    <section className="about" style={{ overflowX: "hidden" }}>
             <div class="about-div">
                 <div className="scan-line" />
                 <Aboutnav />
