@@ -15,7 +15,7 @@
   }
 
   .loader-main.slide-up {
-    transform: translateY(-100%);
+    transform: translateY(-200%);
   }
 
   .loader-container {

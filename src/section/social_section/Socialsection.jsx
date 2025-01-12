@@ -21,13 +21,13 @@ const Socialsection = memo(() => {
     const chars = text.chars;
 
     // Set initial state
-    gsap.set(chars, {
-      opacity: 0
-    });
+    // gsap.set(chars, {
+    //   opacity: 0
+    // });
 
         // Determine start points based on viewport width
-        const startPointText = window.innerWidth < 768 ? 'top 100%' : 'top 80%';
-        const startPointSocial = window.innerWidth < 768 ? 'top 100%' : 'top 60%';
+    const startPointText = window.innerWidth < 768 ? 'top 100%' : 'top 80%';
+    const startPointSocial = window.innerWidth < 768 ? 'top 100%' : 'top 60%';
 
     // Create timeline for text reveal
     const textTl = gsap.timeline({
@@ -50,15 +50,15 @@ const Socialsection = memo(() => {
     });
 
     // Set initial states
-    gsap.set(['.social-orbits', '.social'], {
-      y: 100,
-      opacity: 0
-    });
+    // gsap.set(['.social-orbits', '.social'], {
+    //   y: 100,
+    //   opacity: 0
+    // });
 
-    gsap.set(['.linkedin', '.instagram'], {
-      y: 50,
-      opacity: 0
-    });
+    // gsap.set(['.linkedin', '.instagram'], {
+    //   y: 50,
+    //   opacity: 0
+    // });
 
     // Create timeline
     const socialTl = gsap.timeline({
