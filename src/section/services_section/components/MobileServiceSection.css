@@ -1,0 +1,222 @@
+.mobile-services {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    padding: 20vh 5%;
+    margin: 0 auto;
+    /* display: grid; */
+    grid-template-rows: repeat(var(--cards-count), var(--card-height));
+    gap: 10vh 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.mobile-service-card {
+    position: sticky;
+    top: 25vh;
+    padding: 50px 30px;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1.5px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: all 0.3s ease;
+    transform-origin: center top;
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    z-index: 1;
+    overflow: hidden;
+}
+
+/* Add styles for cards that are behind the current one */
+.mobile-service-card:not(:last-child) {
+    z-index: 1;
+}
+
+.mobile-service-card + .mobile-service-card {
+    z-index: 2;
+}
+
+/* Create the effect of cards going behind */
+.mobile-service-card:not(:first-child) {
+    margin-top: 50px;
+}
+
+.mobile-card-image {
+    position: absolute;
+    top: -20%;
+    right: -20%;
+    width: clamp(300px, 65vw, 500px);
+    max-width: none;
+    z-index: 3;
+}
+
+.mobile-card-image img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    z-index: 3;
+    opacity: 0.3;
+}
+
+.mobile-card-title {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    font-weight: 600;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Nulshock', sans-serif;
+    background: linear-gradient(45deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    z-index: 2;
+    position: relative;
+}
+
+.mobile-card-content {
+    color: #aaa;
+    line-height: clamp(1.4, 2vw, 1.6);
+    font-size: clamp(0.875rem, 2vw, 1rem);
+    margin: 0;
+    max-width: clamp(280px, 90%, 600px);
+    z-index: 3;
+    position: relative;
+}
+
+.mobile-card-gradient {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    filter: blur(100px);
+    opacity: 0.35;
+    background: radial-gradient(circle at left, #6a34e7, #ae4730);
+    z-index: 1;
+    bottom: -20%;
+    right: -20%;
+    transform: translateZ(0);
+    will-change: transform;
+    pointer-events: none;
+}
+
+/* Tablet and Small Laptop Styles */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .mobile-services {
+        padding: 15vh 8vw;
+        max-width: 90%;
+        display: grid;
+    }
+
+    .mobile-service-card {
+        min-height: 60vh;
+        padding: 60px;
+        display: grid;
+        gap: 30px;
+        align-items: center;
+        max-width: 900px;
+    }
+
+    .mobile-card-image {
+        position: absolute;
+        top: -80%;
+        right: -100%;
+        width: clamp(350px, 70vw, 600px);
+        opacity: 0.3;
+        margin-left: auto;
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    .mobile-card-title {
+        font-size: clamp(2rem, 5vw, 2.5rem);
+        grid-column: 1;
+        grid-row: 1;
+        margin-bottom: 0;
+        max-width: 100%;
+        padding-right: 40px;
+    }
+
+    .mobile-card-content {
+        font-size: clamp(1rem, 1.5vw, 1.2rem);
+        grid-column: 1;
+        grid-row: 2;
+        max-width: 100%;
+        padding-right: 40px;
+    }
+
+}
+
+/* Mobile styles remain unchanged */
+@media screen and (max-width: 767px) {
+    .mobile-services {
+        display: grid;
+        padding: 15vh 20px;
+        gap: 15vh 0;
+        max-width: 100%;
+    }
+
+    .mobile-service-card {
+        min-height: 60vh;
+        padding: 40px 25px;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+
+    .mobile-card-image {
+        position: absolute;  /* Keep absolute for mobile */
+        top: -15%;
+        right: -15%;
+        width: clamp(250px, 60vw, 400px);
+        margin: 0;
+    }
+
+    .mobile-card-title {
+        font-size: clamp(1.75rem, 5vw, 2.25rem);
+        margin-top: 60px;
+        margin-bottom: 0;
+        padding-right: 25px;
+    }
+
+    .mobile-card-content {
+        font-size: clamp(0.875rem, 3vw, 1rem);
+        padding-right: 15px;
+        margin-top: 10px;
+    }
+
+}
+
+@media (max-width: 425px) {
+    .mobile-service-card {
+        min-height: 50vh;
+        background-color: rgba(0, 0, 0, 1);
+    }
+}
+
+/* Extra small devices */
+@media screen and (max-width: 380px) {
+    .mobile-services {
+        padding: 12vh 15px;
+    }
+
+    .mobile-service-card {
+        padding: 30px 20px;
+        min-height: 50vh;
+    }
+
+    .mobile-card-title {
+        font-size: clamp(1.5rem, 4.5vw, 1.75rem);
+        margin-top: 50px;
+    }
+
+    .mobile-card-image {
+        top: -10%;
+        right: -10%;
+        width: clamp(200px, 55vw, 300px);
+    }
+}

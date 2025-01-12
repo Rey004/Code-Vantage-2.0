@@ -1,0 +1,148 @@
+.card {
+    flex: 1;
+    background-color: #151515;
+    background-color: black;
+    border: 1px solid #333;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: all 0.3s ease;
+    min-width: 200px;
+    min-height: 500px;
+    border: 1.5px solid rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.08); 
+    -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card-image {
+    position: absolute;
+    width: 30vw;
+    height: auto;
+    overflow: hidden;
+    z-index: 3;
+    transition: none; /* Remove transition */
+    opacity: 0.6;
+    top: -20%;
+    right: -20%;
+    transform-origin: top right;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0.4;
+    transform-origin: top right;
+}
+
+/* Remove the active state CSS animation */
+.card.active .card-image {
+    top: -20%;
+    right: -20%;
+}
+
+.card-title-vertical {
+    position: absolute;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    padding: 30px;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    height: 100%;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-family: 'Nulshock', sans-serif;
+    background: linear-gradient(45deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: opacity 0.3s ease;
+    opacity: 1;
+}
+
+.card-content {
+    position: absolute;
+    width: 400px;  /* fixed width */
+    height: 100%;
+    padding: 60px 40px;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0 !important; /* Force initial opacity */
+    z-index: 3;
+}
+
+.card-title-horizontal {
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Nulshock', sans-serif;
+    background: linear-gradient(45deg, #fff, #ccc);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: 50vw;
+}
+
+.card-content p {
+    color: #aaa;
+    line-height: 1.6;
+    font-size: 1rem;
+    margin: 0;
+    width: 50vw;
+    padding-right: 20px;
+}
+
+.card.active .card-content {
+    opacity: 1 !important; /* Force active opacity */
+    display: flex;
+    pointer-events: all;
+    width: 100%;
+}
+
+.card:not(.active) .card-content {
+    opacity: 0 !important;
+    pointer-events: none;
+}
+
+.card.active .card-title-vertical {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.servicecardgradient {
+    position: absolute;
+    width: 60%;
+    height: 60%;
+    filter: blur(100px);
+    opacity: 0.35;
+    aspect-ratio: 1;
+    background: radial-gradient(circle at left, #6a34e7, #ae4730);
+    z-index: -1;
+    animation: floatGradient 8s ease-in-out infinite;
+    z-index: 2;
+    bottom: 0;
+    right: 0;
+}
+
+@keyframes floatGradient {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(20deg) scale(1.05);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
