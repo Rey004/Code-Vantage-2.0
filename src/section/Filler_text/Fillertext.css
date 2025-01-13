@@ -6,6 +6,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin: 20vh 0;
     padding: 50px 0;
     overflow-x: hidden; /* Ensure no horizontal scrollbar */
     
@@ -146,20 +147,25 @@
         bottom: 0%;
     }
 
-    .filler-side-decor-left {
-        left: 10px;
-    }
-
-    .filler-side-decor-right {
-        right: 10px;
-    }
-
     .filler-side-decor-left svg, .filler-side-decor-right svg {
-        width: 25vw;
+        width: 30vw;
     }
 }
 
 @media (max-width: 480px) {
+    .filler-text-div{
+        margin: 30px 0;
+    }
+
+    .filler-text{
+        font-size: 5.5vw;
+    }
+
+    .filler-side-decor-left {
+        position: absolute;
+        top: 5%;
+    }
+
     .filler-bracketblue {
         width: 40px;
         top: 15px;

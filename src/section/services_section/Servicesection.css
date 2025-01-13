@@ -21,22 +21,43 @@
     width: 100%;
 }
 
-.servicesectionheading{
+.servicesectionheading {
     font-family: Nulshock;
-    font-size: 5rem;
+    font-size: clamp(3rem, 5vw, 5rem);  /* Responsive font size */
     font-weight: 700;
-    line-height: 57.6px;
+    line-height: 1.2;
     text-align: center;
     text-underline-position: from-font;
     text-decoration-skip-ink: none;
     margin: 5% 0;
-    /* color: #dddddd7b; */
     -webkit-text-stroke: 1px #6e6e6e;
     -webkit-text-fill-color: transparent;
 }
 
 @media screen and (max-width: 1024px) {
     .servicesection {
-        display: none;
+        padding: 0 0;
+        margin: 20vh 0;
+    }
+    
+    .services-section-container {
+        display: none;  /* Hide only the container, not the whole section */
+    }
+
+    .servicesectionheading {
+        margin: 2% 0;
+        -webkit-text-stroke: 0.5px #6e6e6e;  /* Thinner stroke for mobile */
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .servicesectionheading {
+        margin: 1% 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .servicesection{
+        margin-bottom: 10vh;
     }
 }

@@ -24,6 +24,7 @@
 @media (max-width: 768px) {
     .line-divider{
         margin: -3vh 0 0 0;
+        height: 35vw;
     }
 }
 
@@ -32,4 +33,8 @@
         height: 45vw;
         margin: -18vh 0 0 0;
     }
+    .line-divider-white{
+        width: 0.190vw;
+    }
+
 }

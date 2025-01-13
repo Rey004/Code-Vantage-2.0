@@ -106,7 +106,7 @@
 /* Tablet and Small Laptop Styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .mobile-services {
-        padding: 15vh 8vw;
+        padding: 10vh 8vw;
         max-width: 90%;
         display: grid;
     }
@@ -154,7 +154,7 @@
 @media screen and (max-width: 767px) {
     .mobile-services {
         display: grid;
-        padding: 15vh 20px;
+        padding: 10vh 20px;
         gap: 15vh 0;
         max-width: 100%;
     }

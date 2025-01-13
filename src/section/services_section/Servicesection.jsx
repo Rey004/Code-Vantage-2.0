@@ -73,8 +73,8 @@ const Servicesection = () => {
             />
           ))}
         </div>
+        <MobileServiceSection cardData={cardData} />
       </section>
-      <MobileServiceSection cardData={cardData} />
     </>
   );
 }
