@@ -7,6 +7,7 @@
     overflow-x: hidden;
     margin: 5vh 0;
     padding: 0;
+    z-index: 3;
 }
 
 .social-container{
@@ -132,8 +133,47 @@
 .instagram:hover .instagram-icon{
     rotate: 0deg;
 }
+.socialglow1{
+    position: absolute;
+    width: 50%;
+    height: auto;
+    filter: blur(200px);
+    opacity: 0.35;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, #345BE7,rgba(0, 0, 0, 0));
+    right: -20%;
+}
+.socialglow2{
+    position: absolute;
+    width: 50%;
+    height: auto;
+    filter: blur(200px);
+    background: radial-gradient(circle, #D452FF,rgba(0, 0, 0, 0));
+    opacity: 0.35;
+    aspect-ratio: 1;
+    left: -20%;
+}
+
+@media (max-width: 1200px) {
+    .socialglow1{
+        filter: blur(120px);
+    }
+    .socialglow2{
+        filter: blur(140px);
+    }
+}
 
 @media (max-width: 768px) {
+    .socialglow1{
+        filter: blur(120px);
+        right: -20%;
+        width: 70%;
+    }
+    .socialglow2{
+        filter: blur(120px);
+        width: 70%;
+        left: -30%;
+    }
     .social-container h1{
         font-size: 2.5rem;
     }
@@ -155,6 +195,16 @@
 }
 
 @media (max-width: 425px) {
+    .socialglow1{
+        filter: blur(80px);
+        right: -20%;
+        width: 70%;
+    }
+    .socialglow2{
+        filter: blur(80px);
+        width: 70%;
+        left: -30%;
+    }
     .social-section{
         margin: 10vh 0;
     }

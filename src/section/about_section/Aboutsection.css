@@ -1,7 +1,7 @@
 .about {
     width: 90%;
     margin: 16vh auto;
-    overflow-x: hidden; /* Ensure no horizontal scrollbar */
+    z-index: 4;
 }
 
 .about-div {

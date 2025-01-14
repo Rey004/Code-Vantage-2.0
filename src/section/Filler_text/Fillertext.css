@@ -8,7 +8,7 @@
     flex-direction: column;
     margin: 20vh 0;
     padding: 50px 0;
-    overflow-x: hidden; /* Ensure no horizontal scrollbar */
+    z-index: 3;
     
 }
 
@@ -82,7 +82,39 @@
     right: 0;
 }
 
+.fillerglow2{
+    position: absolute;
+    width: 60%;
+    height: auto;
+    filter: blur(200px);
+    opacity: 0.35;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, #345BE7,rgba(0, 0, 0, 0));
+    top: -50%;
+    right: -15%;
+}
+
+.fillerglow1{
+    position: absolute;
+    width: 50%;
+    height: auto;
+    filter: blur(200px);
+    opacity: 0.35;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, #D452FF,rgba(0, 0, 0, 0));
+    bottom: -20%;
+    left: -20%;
+}
+
 @media (max-width: 1200px) {
+    .fillerglow1{
+        filter: blur(140px);
+    }
+
+    .fillerglow2{
+        filter: blur(140px);
+    }
+
     .filler-bracketblue {
         width: 90px;
         top: 2px;
@@ -113,6 +145,19 @@
 }
 
 @media (max-width: 768px) {
+    .fillerglow1{
+        filter: blur(120px);
+        top: 40%;
+        width: 70%;
+    }
+
+    .fillerglow2{
+        filter: blur(120px);
+        width: 70%;
+        top: -50%;
+        right: -30%;
+    }
+
     .filler-bracketblue {
         width: 70px;
         top: 7px;
@@ -153,6 +198,20 @@
 }
 
 @media (max-width: 480px) {
+    .fillerglow1{
+        filter: blur(100px);
+        top: 40%;
+        left: -40%;
+        width: 90%;
+        opacity: 0.5;
+    }
+    .fillerglow2{
+        filter: blur(120px);
+        width: 90%;
+        top: -50%;
+        right: -30%;
+        opacity: 0.5;
+    }
     .filler-text-div{
         margin: 30px 0;
     }
