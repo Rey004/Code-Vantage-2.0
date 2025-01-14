@@ -4,7 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin: 20vh 0;
+    padding: 20vh 0;
+    background-color: black;
 }
 
 .portfolio-container {
@@ -209,7 +210,7 @@
 /* Additional adjustments for smaller screens */
 @media (max-width: 425px) {
     .portfolio-section{
-        margin: 1vh 0;
+        padding: 1vh 0;
     }
     .portfolio-svg{
         width: 70%;

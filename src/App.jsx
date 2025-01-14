@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 import Loader from './components/Loader'
 import './globals.css'
 
+const Processsection = lazy(() => import('./section/process_section/Processsection'))
 const Fillertextsection = lazy(() => import('./section/Filler_text/Fillertextsection'))
 const Portfoliosection = lazy(() => import('./section/portfolio_section/Portfoliosection'))
 const Socialsection = lazy(() => import('./section/social_section/Socialsection'))
@@ -14,15 +15,15 @@ const Faqsection = lazy(() => import('./section/faq_section/Faqsection'))
 
 function App() {
   useEffect(() => {
-    document.documentElement.style.overflowX = 'hidden';
-    document.body.style.overflowX = 'hidden';
+    // document.documentElement.style.overflowX = 'hidden';
+    // document.body.style.overflowX = 'hidden';
     document.documentElement.style.width = '100%';
     document.body.style.width = '100%';
   }, []);
 
   return (
     <>
-      <Loader/>
+      {/* <Loader/> */}
       <Navbar />
       <main>
       <Herosection />
@@ -31,6 +32,7 @@ function App() {
       <Suspense fallback={<div></div>}>
         <Fillertextsection />
         <Portfoliosection />
+        <Processsection />
         <Socialsection />
         <Faqsection />
       </Suspense>

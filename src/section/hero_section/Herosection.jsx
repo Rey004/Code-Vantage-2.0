@@ -30,7 +30,7 @@ const Herosection = () => {
 
   return (
     <>
-      <section id="hero" style={{ marginTop: "10vh", overflowX: "hidden", width: "100%" }}>
+      <section id="hero" style={{ paddingTop: "10vh", width: "100%" }}>
         <Herotext textType="solid"/>
         <Herostar />
         <Herotext textType="stroke"/>

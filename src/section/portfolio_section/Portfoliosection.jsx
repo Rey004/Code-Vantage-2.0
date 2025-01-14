@@ -151,7 +151,7 @@ const Portfoliosection = () => {
   }, []);
 
   return (
-    <sec className='portfolio-section'>
+    <section className='portfolio-section'>
         <div className='portfolio-container'>
 
             {/* DESKTOP PORTFOLIO TITLE */}
@@ -196,7 +196,7 @@ const Portfoliosection = () => {
                  <Portfolioitem name="Rey Ventures" link="https://rey004.github.io/Rey-Ventures/" image="/assets/Rey-Ventures.webp" />
             </div>
         </div>
-    </sec>
+    </section>
   )
 }
 

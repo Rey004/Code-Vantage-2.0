@@ -41,6 +41,7 @@ body {
   color: white;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  z-index: 1;
 }
 
 #root {
@@ -52,4 +53,5 @@ body {
 
 main {
   flex: 1;
+  z-index: 1;
 }

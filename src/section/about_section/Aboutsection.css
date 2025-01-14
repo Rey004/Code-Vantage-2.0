@@ -1,7 +1,8 @@
 .about {
     width: 90%;
-    margin: 16vh auto;
-    overflow-x: hidden; /* Ensure no horizontal scrollbar */
+    margin: 0 auto;
+    padding: 16vh 0;
+    background-color: black;
 }
 
 .about-div {

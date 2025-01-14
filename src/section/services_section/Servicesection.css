@@ -3,12 +3,13 @@
     min-height: 100vh;
     position: relative;
     padding: 0 10%;
-    margin: 10vh 0;
+    padding: 10vh 0 0 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-bottom: 20vh;
+    padding-bottom: 20vh;
+    background-color: black;
 }
 
 .services-section-container {
@@ -37,8 +38,7 @@
 
 @media screen and (max-width: 1024px) {
     .servicesection {
-        padding: 0 0;
-        margin: 20vh 0;
+        padding: 20vh 0;
     }
     
     .services-section-container {
@@ -61,6 +61,6 @@
 
 @media (max-width: 480px) {
     .servicesection{
-        margin-bottom: 20vh;
+        padding-bottom: 20vh;
     }
 }
