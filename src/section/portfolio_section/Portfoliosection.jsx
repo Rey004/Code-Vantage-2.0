@@ -151,7 +151,7 @@ const Portfoliosection = () => {
   }, []);
 
   return (
-    <sec className='portfolio-section'>
+    <sec className='portfolio-section' id='portfolio'>
         <div className='portfolio-container'>
         <div className="portfolioglow1"></div>
         <div className="portfolioglow2"></div>

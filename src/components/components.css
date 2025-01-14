@@ -16,6 +16,7 @@ button:hover {
   background: linear-gradient(to right, #515DCD, #8A619A, #BF656C);
   /* transform: translateY(-2px); */
   box-shadow: 0 0px 15px rgba(255, 255, 255, 0.158);
+  padding: 1.1rem 2.6rem;
 }
 
 /* Navbar */
@@ -72,6 +73,13 @@ nav{
     font-size: 1rem;
     font-weight: 500;
     font-family: 'Inter';
+  }
+
+  a:hover{
+    background: linear-gradient(to right, #989fe0, #d6848b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
   }
 
   .hamburger {
