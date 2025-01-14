@@ -8,6 +8,7 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    margin-bottom: 20vh;
 }
 
 .services-section-container {
@@ -47,6 +48,8 @@
     .servicesectionheading {
         margin: 2% 0;
         -webkit-text-stroke: 0.5px #6e6e6e;  /* Thinner stroke for mobile */
+        position: sticky;
+        top: 20vh;
     }
 }
 
@@ -58,6 +61,6 @@
 
 @media (max-width: 480px) {
     .servicesection{
-        margin-bottom: 10vh;
+        margin-bottom: 20vh;
     }
 }

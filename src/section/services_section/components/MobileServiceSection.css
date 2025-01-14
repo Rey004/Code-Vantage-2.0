@@ -10,11 +10,12 @@
     gap: 10vh 0;
     justify-content: center;
     align-items: center;
+    padding-bottom: 0;
 }
 
 .mobile-service-card {
     position: sticky;
-    top: 25vh;
+    top: 30vh;
     padding: 50px 30px;
     gap: 20px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -109,6 +110,7 @@
         padding: 10vh 8vw;
         max-width: 90%;
         display: grid;
+        padding-bottom: 0;
     }
 
     .mobile-service-card {
@@ -157,6 +159,7 @@
         padding: 10vh 20px;
         gap: 15vh 0;
         max-width: 100%;
+        padding-bottom: 0;
     }
 
     .mobile-service-card {
@@ -202,6 +205,7 @@
 @media screen and (max-width: 380px) {
     .mobile-services {
         padding: 12vh 15px;
+        padding-bottom: 0;
     }
 
     .mobile-service-card {
