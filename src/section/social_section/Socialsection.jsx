@@ -133,6 +133,8 @@ const Socialsection = memo(() => {
 
   return (
     <section className='social-section'>
+    <div className="socialglow1"></div>
+    <div className="socialglow2"></div>
       <div className="social-container">
         <h1 ref={headingRef}>Follow our journey</h1>
         <div className="social-links">

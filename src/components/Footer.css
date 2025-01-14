@@ -31,7 +31,7 @@ footer{
     opacity: 0.5;
     aspect-ratio: 1;
     background: radial-gradient(circle at left, #6a34e7, #ae4730);
-    z-index: 1;
+    z-index: 2;
 }
 
 /* Upper Footer */
@@ -42,7 +42,7 @@ footer{
     position: relative;
     width: 100%;
     padding: 5rem 0;
-    z-index: 2;
+    z-index: 3;
 }
 
 .star1,.star2,.bracket-blue,.bracket-purple{
@@ -103,7 +103,7 @@ footer{
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
-    z-index: 2;
+    z-index: 3;
     padding: 3rem ;
     overflow: hidden;
 }
@@ -120,7 +120,7 @@ footer{
     bottom: -10%;
     right: -2%;
     rotate: 50deg;
-    z-index: 1;
+    z-index: 2;
     opacity: 0.5;
 }
 
@@ -129,7 +129,7 @@ footer{
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
-    z-index: 4;
+    z-index: 5;
 }
 
 .cta{
@@ -162,7 +162,7 @@ footer{
 
 .rights{
     color: rgb(170, 170, 170);
-    z-index: 4;
+    z-index: 5;
 }
 
 @media (max-width: 1024px){
@@ -201,9 +201,9 @@ footer{
     }
     .footer-gradient {
         width: 80%;
-        height: 60%;
+        height: 40%;
         filter: blur(180px);
-        opacity: 0.5;
+        opacity: 0.7;
         aspect-ratio: none;
     }
 }
@@ -342,10 +342,10 @@ footer{
     }
 
     .footer-gradient {
-        width: 60%;
-        height: 100%;
+        width: 40%;
+        height: 60%;
         filter: blur(120px);
-        opacity: 0.5;
+        opacity: 0.7;
         aspect-ratio: none;
     }
     

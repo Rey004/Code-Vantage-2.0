@@ -27,7 +27,9 @@ const Fillertextsection = () => {
   }, []);
 
   return (
-    <div className="filler-text-div" style={{ overflowX: "hidden", width: "100%" }}>
+    <div className="filler-text-div">
+      <div className="fillerglow1"></div>
+      <div className="fillerglow2"></div>
       <div className="filler-side-decor-left">
         <Fillersidedecorleft />
       </div>
