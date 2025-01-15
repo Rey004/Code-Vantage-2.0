@@ -151,7 +151,7 @@ const Portfoliosection = () => {
   }, []);
 
   return (
-    <sec className='portfolio-section' id='portfolio'>
+    <section className='portfolio-section' id='portfolio'>
         <div className='portfolio-container'>
         <div className="portfolioglow1"></div>
         <div className="portfolioglow2"></div>
@@ -197,7 +197,7 @@ const Portfoliosection = () => {
                  <Portfolioitem name="Rey Ventures" link="https://rey004.github.io/Rey-Ventures/" image="/assets/Rey-Ventures.webp" />
             </div>
         </div>
-    </sec>
+    </section>
   )
 }
 

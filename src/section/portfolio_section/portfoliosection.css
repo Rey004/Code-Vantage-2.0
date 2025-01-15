@@ -4,8 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin: 20vh 0;
-    z-index: 3;
+    padding: 20vh 0;
+    background-color: black;
 }
 
 .portfolio-container {
@@ -265,7 +265,7 @@
         right: -10%;
     }
     .portfolio-section{
-        margin: 1vh 0;
+        padding: 1vh 0;
     }
     .portfolio-svg{
         width: 70%;

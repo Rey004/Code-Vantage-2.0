@@ -4,10 +4,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-x: hidden;
-    margin: 5vh 0;
-    padding: 0;
-    z-index: 3;
+    padding: 40vh 0 10vh 0;
+    background-color: black;
 }
 
 .social-container{
@@ -206,7 +204,8 @@
         left: -30%;
     }
     .social-section{
-        margin: 10vh 0;
+        margin: 0;
+        padding-top: 20vh;
     }
     .social-container h1{
         font-size: 2rem;

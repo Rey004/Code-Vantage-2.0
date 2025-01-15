@@ -6,10 +6,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    margin: 20vh 0;
-    padding: 50px 0;
-    z-index: 3;
-    
+    padding: 20vh 0;
+    overflow-x: hidden; /* Ensure no horizontal scrollbar */
+    background-color: black;
 }
 
 .filler-bracketblue, .filler-bracketpurple{
@@ -66,12 +65,12 @@
 
 .filler-side-decor-left {
     position: absolute;
-    top: 0%;
+    top: 10%;
 }
 
 .filler-side-decor-right{
     position: absolute;
-    bottom: 0%;
+    bottom: 10%;
 }
 
 .filler-side-decor-left {
@@ -184,12 +183,12 @@
 
     .filler-side-decor-left {
         position: absolute;
-        top: 0%;
+        top: 15%;
     }
     
     .filler-side-decor-right{
         position: absolute;
-        bottom: 0%;
+        bottom: 15%;
     }
 
     .filler-side-decor-left svg, .filler-side-decor-right svg {
@@ -213,7 +212,7 @@
         opacity: 0.5;
     }
     .filler-text-div{
-        margin: 30px 0;
+        padding: 30px 0;
     }
 
     .filler-text{
@@ -221,8 +220,11 @@
     }
 
     .filler-side-decor-left {
-        position: absolute;
         top: 5%;
+    }
+
+    .filler-side-decor-right{
+        bottom: 0%;
     }
 
     .filler-bracketblue {

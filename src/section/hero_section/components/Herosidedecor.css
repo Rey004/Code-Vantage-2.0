@@ -24,13 +24,13 @@
     /* Positioning for desktop */
     .hero-side-decor-left {
         left: 0; /* Align to the left */
-        top: 50%; /* Center vertically */
+        top: calc(10vh + 50%); /* Center vertically */
         transform: translateY(-50%); /* Adjust for centering */
     }
 
     .hero-side-decor-right {
         right: 0; /* Align to the right */
-        top: 50%; /* Center vertically */
+        top: calc(10vh + 50%); /* Center vertically */
         transform: translateY(-50%); /* Adjust for centering */
     }
 }
@@ -48,14 +48,14 @@
     /* Positioning for mobile */
     .hero-side-decor-left {
         left: 0; /* Center horizontally */
-        top: 10%;
+        top: calc(9vh + 10%);
         width: 60%;
         height: auto;
     }
 
     .hero-side-decor-right {
         right: 0; /* Center horizontally */
-        bottom: 15%; /* Position below the hero star */
+        bottom: 10%; /* Position below the hero star */
         width: 60%;
         height: auto;
     }
@@ -63,10 +63,10 @@
 
 @media (max-width: 480px){
     .hero-side-decor-left {
-        top: 10%;
+        top: calc(9vh + 10%);
     }
 
     .hero-side-decor-right {
-        bottom: 30%;
+        bottom: 20%;
     }
 }

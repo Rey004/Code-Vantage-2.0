@@ -6,8 +6,8 @@ footer{
     align-items: center;
     flex-direction: column;
     position: relative; 
-    /* margin-top: auto; */
-    /* padding-top: 10rem; */
+    background-color: black;
+    z-index: 1;
 }
 
 .footer-div{
@@ -19,7 +19,7 @@ footer{
     flex-direction: column;
     position: relative;
     background-color: #0E0614;
-    border-top: 2px solid; /* Adjust the border width as needed */
+    border-top: 2px solid;
     border-image: linear-gradient(to right, #5D3378, #4545454c, #D35EE3, #4545456c, #5D3378) 1;
 }
 

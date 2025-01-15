@@ -3,9 +3,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 14vw;
+    height: 25vw;
     z-index: 1;
-    margin: 7vh 0 0 0;
+    padding: 15vh 0 0 0;
+    background-color: black;
 }
 
 .line-divider-white{
@@ -16,22 +17,21 @@
 
 @media (max-width:1024px){
     .line-divider{
-        height: 25vw;
-        margin: 7vh 0 0 0;
+        height: 35vw;
+        padding: 15vh 0 0 0;
     }
 }
 
 @media (max-width: 768px) {
     .line-divider{
-        margin: -3vh 0 0 0;
+        padding: 0vh 0 0 0;
         height: 35vw;
     }
 }
 
 @media (max-width: 480px) {
     .line-divider{
-        height: 45vw;
-        margin: -18vh 0 0 0;
+        height: 60vw;
     }
     .line-divider-white{
         width: 0.190vw;

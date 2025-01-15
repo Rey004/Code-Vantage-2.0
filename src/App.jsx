@@ -12,16 +12,10 @@ import Loader from './components/Loader'
 import './globals.css'
 
 function App() {
-  useEffect(() => {
-    document.documentElement.style.overflowX = 'hidden';
-    document.body.style.overflowX = 'hidden';
-    document.documentElement.style.width = '100%';
-    document.body.style.width = '100%';
-  }, []);
 
   return (
     <>
-      <Loader/>
+      {/* <Loader/> */}
       <Navbar />
       <main>
       <Herosection />
