@@ -58,7 +58,7 @@ const Servicesection = () => {
 
   return (
     <>
-      <section className='servicesection'>
+      <section className='servicesection' id='services'>
         <h2 className="servicesectionheading">SERVICES</h2>
         <div className="services-section-container">
           {cardData.map((card, index) => (

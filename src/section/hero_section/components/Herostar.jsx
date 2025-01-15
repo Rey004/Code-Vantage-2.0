@@ -17,6 +17,18 @@ const Herostar = () => {
     };
 
     loadSplineViewer();
+
+    // Function to remove unnecessary iframes added by Spline
+    const removeUnnecessaryIframes = () => {
+      const iframes = document.querySelectorAll('iframe');
+      iframes.forEach(iframe => {
+        if (iframe.src.includes('spline.design')) {
+          iframe.remove();
+        }
+      });
+    };
+
+    removeUnnecessaryIframes();
   }, []);
 
 
@@ -55,7 +67,7 @@ const Herostar = () => {
   return (
     <div className="hero-star">
       <spline-viewer style={{position: "absolute"}} url="https://prod.spline.design/xxPn4nIw3-vfVA14/scene.splinecode"></spline-viewer>
-    <img src="/assets/hero-star.gif" alt="" className="hero-image"/>
+      <img src="/assets/hero-star.gif" alt="" className="hero-image"/>
     </div>
   );
 }

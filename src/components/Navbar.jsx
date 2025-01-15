@@ -10,17 +10,28 @@ const toggleMenu = () => {
   document.querySelector('.navbar').classList.toggle('extended');
 };
 
+const handleNavClick = (e, targetId) => {
+  e.preventDefault();
+  const targetElement = document.getElementById(targetId);
+  if (targetElement) {
+    targetElement.scrollIntoView({ behavior: 'smooth' });
+  }
+  setIsOpen(false);
+  document.querySelector('.hamburger').classList.remove('active');
+  document.querySelector('.navbar').classList.remove('extended');
+};
+
   return (
     <nav>
       <div className={`navbar ${isOpen ? 'extended' : ''}`}>
         <img src="/assets/Icon Logo.webp" alt="logo" className="logo" />
         
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#process">Process</a></li>
-          <li><a href="#faqs">FAQs</a></li>
+          <li><a onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
+          <li><a onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
+          <li><a onClick={(e) => handleNavClick(e, 'portfolio')}>Portfolio</a></li>
+          <li><a onClick={(e) => handleNavClick(e, 'process')}>Process</a></li>
+          <li><a onClick={(e) => handleNavClick(e, 'faqs')}>FAQs</a></li>
           <li className="mobile-button">
             <Button name="SCHEDULE" link="#contact" />
           </li>

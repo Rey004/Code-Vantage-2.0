@@ -123,7 +123,7 @@ const Faqsection = () => {
   }, []);
 
   return (
-    <section className="faqsection">
+    <section className="faqsection" id='faqs'>
         <svg className='faq-svg' width="482" height="126" viewBox="0 0 482 126" fill="none" xmlns="http://www.w3.org/2000/svg">
 <mask id="path-1-outside-1_379_2" maskUnits="userSpaceOnUse" x="76.0002" y="89" width="107" height="28" fill="black">
 <rect fill="white" x="76.0002" y="89" width="107" height="28"/>

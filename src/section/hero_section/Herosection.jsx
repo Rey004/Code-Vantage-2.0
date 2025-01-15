@@ -31,6 +31,9 @@ const Herosection = () => {
   return (
     <>
       <section id="hero" style={{ paddingTop: "10vh", width: "100%" }}>
+        <div className="heroglow1"></div>
+        <div className="heroglow2"></div>
+        <div className="heroglow3"></div>
         <Herotext textType="solid"/>
         <Herostar />
         <Herotext textType="stroke"/>

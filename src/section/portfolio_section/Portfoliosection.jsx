@@ -151,9 +151,10 @@ const Portfoliosection = () => {
   }, []);
 
   return (
-    <section className='portfolio-section'>
+    <section className='portfolio-section' id='portfolio'>
         <div className='portfolio-container'>
-
+        <div className="portfolioglow1"></div>
+        <div className="portfolioglow2"></div>
             {/* DESKTOP PORTFOLIO TITLE */}
             <div className='portfolio-title'>
             <svg className='portfolio-svg' width="391" height="152" viewBox="0 0 391 152" fill="none" xmlns="http://www.w3.org/2000/svg">
