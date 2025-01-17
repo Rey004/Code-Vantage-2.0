@@ -25,7 +25,7 @@
 
 .servicesectionheading {
     font-family: Nulshock;
-    font-size: clamp(3rem, 5vw, 5rem);  /* Responsive font size */
+    font-size: clamp(2.5rem, 5vw, 5rem);
     font-weight: 700;
     line-height: 1.2;
     text-align: center;
@@ -42,14 +42,16 @@
     }
     
     .services-section-container {
-        display: none;  /* Hide only the container, not the whole section */
+        display: none;
     }
 
     .servicesectionheading {
         margin: 2% 0;
-        -webkit-text-stroke: 0.5px #6e6e6e;  /* Thinner stroke for mobile */
         position: sticky;
-        top: 20vh;
+        top: 15vh;
+    }
+    .servicesection{
+        padding-top: 10vh;
     }
 }
 
@@ -57,10 +59,13 @@
     .servicesectionheading {
         margin: 1% 0;
     }
+    .servicesection{
+        padding-top: 10vh;
+    }
 }
 
-@media (max-width: 480px) {
-    .servicesection{
-        padding-bottom: 20vh;
+@media (max-width: 480px){
+    .servicesectionheading {
+        -webkit-text-stroke: 0.7px #6e6e6e;
     }
 }

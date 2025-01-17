@@ -1,6 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
 
+.process-section{
+    text-align: center;
+}
 
+.processsectionheading{
+    padding: 5% 0;
+    background-color: black;
+}
+
+.processsectionheading h2{
+    display: inline;
+    font-family: Nulshock;
+    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    text-underline-position: from-font;
+    text-decoration-skip-ink: none;
+    -webkit-text-stroke: 1px #6e6e6e;
+    -webkit-text-fill-color: transparent;
+}
 
 .process-timeline {
     flex-direction: column;
@@ -11,12 +31,12 @@
     margin-right: auto;
     display: flex;
     position: relative;
-    /* margin-bottom: 5rem; */
+    margin-bottom: 5rem;
 }
 
 .timeline-progress {
     z-index: -2;
-    background-color: #3f2614;
+    background-color: #33123a;
     width: 3px;
     height: 100%;
     position: absolute;
@@ -26,7 +46,7 @@
 .timeline-progress-bar {
     z-index: -1;
     background-color: #fff;
-    background-image: linear-gradient(to bottom, #FD9903, #F7430A);
+    background-image: linear-gradient(to bottom, #f9b3ff, #f9b3ff, #6400c2);
     width: 3px;
     height: 52vh;
     position: fixed;
@@ -45,8 +65,8 @@
     padding-bottom: 100px;
     display: grid;
     position: relative;
+    top: 7rem;
 }
-
 
 .timeline_left {
     text-align: right;
@@ -66,7 +86,7 @@
     text-transform: uppercase;
     padding-right: 0;
     font-family: "Oswald", sans-serif;
-    font-size: 3em;
+    font-size: 4em;
     font-weight: 500;
     line-height: 1.2;
     position: sticky;
@@ -77,16 +97,20 @@
 
 .timeline-step-number {
     opacity: 1;
-    color: #065DEE;
+    color: #ffffff;
+    background: linear-gradient(to bottom right, #f9b3ff, #f9b3ff, #9523ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
     overflow-wrap: normal;
     font-family: "Oswald", sans-serif;
     font-size: 12em;
     font-weight: 500;
-    line-height: 200px;
+    line-height: 150px;
     position: absolute;
-    top: -160%;
-    bottom: 0%;
-    left: 30%;
+    top: -100%;
+    bottom: -100%;
+    left: 25%;
     right: auto;
     z-index: 1;
 }
@@ -98,7 +122,7 @@
 
 .timeline-arrow {
     opacity: 1;
-    background-color: black;
+    background-color: rgb(0, 0, 0);
     border-radius: 100%;
     width: 30px;
     min-width: 35px;
@@ -126,10 +150,10 @@
 .timeline-heading {
     text-align: left;
     margin-bottom: 20px;
-    font-size: 2.5em;
     font-weight: 600;
     color: #fff;
-    font-family: "Inter", sans-serif;
+    font-family: "Nulshock";
+    font-size: 2.5em;
     line-height: 1.3;
 }
 
@@ -166,6 +190,7 @@
     margin-bottom: 0;
     font-size: 1.125rem;
     line-height: 150%;
+    color: #afafaf;
 }
 
 .timeline-item:last-child {
@@ -175,15 +200,22 @@
 @media (max-width: 1200px){
     .timeline-step-number{
         font-size: 10em;
-        left: 10%;
+        left: 20%;
     }
 
     .timeline-step-number-text{
         font-size: 2.6em;
     }
+
+    .timeline-item{
+        grid-template-columns: 1fr 100px 1fr;
+    }
 }
 
 @media (max-width: 992px){
+    .processsectionheading {
+        padding: 10% 0 10vh 0;
+    }
     .timeline-step-number{
         font-size: 8em;
         left: 0;
@@ -195,6 +227,9 @@
 }
 
 @media (max-width: 767px) {
+    .processsectionheading {
+        padding: 10% 0 10vh 0;
+    }
     .timeline-progress {
         left: 25px;
     }
@@ -236,16 +271,24 @@
     }
 
     .timeline-heading {
-        font-size: 1.2em;
+        font-size: 2em;
     }
 
     .timeline-description {
         margin-bottom: 48px;
         font-size: 1rem;
     }
+
+    .timeline-arrow img{
+        margin-left: 8px;
+    }
 }
 
 @media (max-width: 479px) {
+    .processsectionheading h2{
+        -webkit-text-stroke: 0.7px #6e6e6e;
+    }
+
     .timeline-item {
         grid-template-columns: 48px 1fr;
         padding-left: 20px;
@@ -274,13 +317,70 @@
 
     .timeline-heading {
         text-align: left;
-        font-size: 1.2em;
+        font-size: 1.8em;
     }
 
     .timeline-description {
         margin-bottom: 20px;
+        font-size: 0.9rem;
     }
     .timeline-image-div{
-        width: 100%;
+        width: 120%;
+    }
+    .timeline-arrow img{
+        margin-left: 0px;
+    }
+}
+
+@media (max-width: 425px){
+    .timeline-arrow{
+        min-width: 30px;
+        max-width: 30px;
+    }
+
+    .timeline-arrow img{
+        margin-left: 2px;
+    }
+
+    .timeline-heading {
+        font-size: 1.5em;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1200px) {
+    .process-timeline {
+        max-width: 90vw;
+    }
+
+    .timeline-item {
+        grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .timeline-center {
+        justify-content: center;
+    }
+
+    .timeline-step-number {
+        font-size: 7em;
+        left: 15%;
+        line-height: 120px;
+    }
+
+    .timeline-step-number-text {
+        font-size: 2.5em;
+    }
+
+    .timeline-heading {
+        font-size: 2em;
+    }
+
+    .timeline-description {
+        font-size: 1rem;
+    }
+
+    .timeline-image-div {
+        width: 90%;
     }
 }

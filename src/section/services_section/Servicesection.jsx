@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react'
-import Servicecard from './components/Servicecard'
-import MobileServiceSection from './components/MobileServiceSection'
-import './Servicesection.css'
+import React, { useState, useRef, useEffect } from 'react';
+import Servicecard from './components/Servicecard';
+import MobileServiceSection from './components/MobileServiceSection';
+import './Servicesection.css';
 
-const cardData = [
+const CARD_DATA = [
   { 
     id: 1, 
     title: 'Web Development', 
@@ -23,60 +23,44 @@ const Servicesection = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const timeoutRef = useRef(null);
 
-  const clearTransitionTimeout = () => {
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-      timeoutRef.current = null;
-    }
-  };
-
-  const handleCardHover = (index) => {
-    clearTransitionTimeout();
+  const handleCardTransition = (index) => {
+    if (isTransitioning) return;
+    
+    setIsTransitioning(true);
     setActiveCard(index);
-    setIsTransitioning(true);
+    
     timeoutRef.current = setTimeout(() => {
       setIsTransitioning(false);
-    }, 400);
+    });
   };
 
-  const handleCardLeave = () => {
-    clearTransitionTimeout();
-    setActiveCard(0);
-    setIsTransitioning(true);
-    timeoutRef.current = setTimeout(() => {
-      setIsTransitioning(false);
-    }, 400);
-  };
-
-  // Cleanup on unmount
   useEffect(() => {
     return () => {
-      clearTransitionTimeout();
-      setIsTransitioning(false);
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
     };
   }, []);
 
   return (
-    <>
-      <section className='servicesection' id='services'>
-        <h2 className="servicesectionheading">SERVICES</h2>
-        <div className="services-section-container">
-          {cardData.map((card, index) => (
-            <Servicecard
-              key={card.id}
-              title={card.title}
-              content={card.content}
-              image={card.image}
-              isActive={index === activeCard}
-              onHover={() => handleCardHover(index)}
-              onLeave={handleCardLeave}
-            />
-          ))}
-        </div>
-        <MobileServiceSection cardData={cardData} />
-      </section>
-    </>
+    <section className='servicesection' id='services'>
+      <h2 className="servicesectionheading">WHAT WE PROVIDE</h2>
+      <div className="services-section-container">
+        {CARD_DATA.map((card, index) => (
+          <Servicecard
+            key={card.id}
+            title={card.title}
+            content={card.content}
+            image={card.image}
+            isActive={index === activeCard}
+            onHover={() => handleCardTransition(index)}
+            onLeave={() => handleCardTransition(0)}
+          />
+        ))}
+      </div>
+      <MobileServiceSection cardData={CARD_DATA} />
+    </section>
   );
 }
 
-export default Servicesection
+export default Servicesection;

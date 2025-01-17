@@ -5,7 +5,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Timelineitem from './components/Timelineitem'
 import './Processsection.css'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Processsection = () => {
   const timelineData = [
@@ -26,7 +27,7 @@ const Processsection = () => {
     {
       step: "STEP THREE",
       number: 3,
-      heading: "Designing",
+      heading: "Design & Prototyping",
       image: "/assets/designing.webp",
       description: "In the design phase, we create modern, professional, and relevant designs. Our focus is on delivering a clean, aesthetically pleasing interface without unnecessary elements, ensuring a seamless user experience."
     },
@@ -39,41 +40,45 @@ const Processsection = () => {
     }
   ];
 
-//   useGSAP(() => {
-//     const timeline = gsap.timeline({
-//       scrollTrigger: {
-//         trigger: ".process-timeline",
-//         scroller: "body",
-//         start: "top 60%",
-//         end: "top 51%",
-//         scrub: 1,
-//       }
-//     });
+  useGSAP(() => {
+      const timeline = gsap.timeline({
+        scrollTrigger: {
+          trigger: ".process-timeline",
+          start: "top 80%",
+          end: "top 75%",
+          scrub: 1,
+          fastScrollEnd: true,
+          preventOverlaps: true,
+        }
+      });
 
-//     // Animate progress bar
-//     timeline.from(".timeline-progress-bar", {
-//         opacity: 0,
-//         height: "0%",
-//     });
+    
+      if (window.innerWidth >= 1024) {
+        timeline.from(".timeline-progress-bar", {
+          opacity: 0,
+          height: "0%",
+      });
 
-    // Animate timeline items
-    // timelineData.forEach((item) => {
-    //   gsap.from(`.ti-${item.number}`, {
-    //     opacity: 0.4,
-    //     duration: 0.1,
-    //     scrollTrigger: {
-    //         trigger: `.timeline-trigger-${item.number}`,
-    //         scroller: "body",
-    //         start: "top 70%",
-    //         end: "bottom 51%",
-    //         scrub:1
-    //     }
-    //   });
-    // });
-//   }, []);
+      timelineData.forEach((item) => {
+        gsap.from(`.ti-${item.number}`, {
+          opacity: 0.4,
+          duration: 0.1,
+          scrollTrigger: {
+            trigger: `.timeline-trigger-${item.number}`,
+            start: "top 80%",
+            end: "bottom 60%",
+            scrub: 1,
+            fastScrollEnd: true,
+            preventOverlaps: true,
+          }
+        });
+      });
+    }
+  }, []);
 
   return (
     <section className="process-section" id="process">
+      <div className="processsectionheading"><h2>OUR PROCESS</h2></div>
         <div className="process-timeline">
             <div className="timeline-progress">
                 <div className="timeline-progress-bar"></div>
