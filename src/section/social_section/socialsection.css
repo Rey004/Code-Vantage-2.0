@@ -50,6 +50,7 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     padding-top: 50px;
+    animation: Socialfloat 5s infinite ease-in-out;
 }
 
 .social{
@@ -62,6 +63,7 @@
     backface-visibility: hidden;
     transform: translateZ(0);
     padding-top: 50px;
+    animation: Socialfloat 5s infinite ease-in-out;
 }
 
 .linkedin{
@@ -76,6 +78,7 @@
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
+    animation: SocialfloatSmall 4s infinite ease-in-out;
 }
 
 .instagram{
@@ -91,6 +94,8 @@
     will-change: transform;
     backface-visibility: hidden;
     transform: translateZ(0);
+    animation: SocialfloatSmall 3.5s infinite ease-in-out;
+    animation-delay: 0.5s;
 }
 
 .linkedin-button{
@@ -236,4 +241,28 @@
 
 .char {
   display: inline-block;
+}
+
+@keyframes Socialfloat {
+   0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0px, 20px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes SocialfloatSmall {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

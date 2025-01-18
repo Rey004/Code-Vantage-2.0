@@ -2,6 +2,8 @@ import React from 'react'
 import "./Herosidedecor.css"
 
 const Herosidedecorleft = () => {
+  
+
   return (
           <>
       <svg className='hero-side-decor hero-side-decor-left hero-side-decor-desktop' width="89" height="462" viewBox="0 0 89 462" fill="none" xmlns="http://www.w3.org/2000/svg">

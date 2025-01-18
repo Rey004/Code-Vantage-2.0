@@ -1,132 +1,90 @@
-import React, { useEffect, useRef, memo } from 'react'
+import React, { useRef, memo } from 'react'
 import './socialsection.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useGSAP } from '@gsap/react'
 import SplitType from 'split-type'
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Socialsection = memo(() => {
   const headingRef = useRef(null);
+  const containerRef = useRef(null);
 
-  useEffect(() => {
-    // Split text into words and characters
-    const text = new SplitType(headingRef.current, { 
-      types: 'words,chars',
-      wordClass: 'word',
-      charClass: 'char'
-    });
-    
-    const chars = text.chars;
+  useGSAP(() => {
+    if (window.innerWidth > 1024) {
+      // Split text setup remains same
+      const text = new SplitType(headingRef.current, { 
+        types: 'words,chars',
+        wordClass: 'word',
+        charClass: 'char'
+      });
+      
+      const chars = text.chars;
 
-    // Set initial state
-    // gsap.set(chars, {
-    //   opacity: 0
-    // });
+      // Set initial states
+      gsap.set(chars, { opacity: 0 });
+      gsap.set(['.social-orbits', '.social'], { y: 100, opacity: 0 });
+      gsap.set(['.linkedin', '.instagram'], { y: 50, opacity: 0 });
 
-        // Determine start points based on viewport width
-    const startPointText = window.innerWidth < 768 ? 'top 100%' : 'top 80%';
-    const startPointSocial = window.innerWidth < 768 ? 'top 100%' : 'top 60%';
+      // Text animation
+      const textTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.social-section',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        }
+      });
 
-    // Create timeline for text reveal
-    const textTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.social-section',
-        start: startPointText, // Adjusted start position for better mobile support
-        // toggleActions: 'play none none reverse'
-      }
-    });
-
-    // Animate characters with random stagger
-    textTl.to(chars, {
-      opacity: 1,
-      duration: 0.8,
-      stagger: {
-        amount: 0.5,
-        from: "random",
-        ease: "power2.inOut"
-      }
-    });
-
-    // Set initial states
-    // gsap.set(['.social-orbits', '.social'], {
-    //   y: 100,
-    //   opacity: 0
-    // });
-
-    // gsap.set(['.linkedin', '.instagram'], {
-    //   y: 50,
-    //   opacity: 0
-    // });
-
-    // Create timeline
-    const socialTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '.social-section',
-        start: startPointSocial, // Adjusted start position for better mobile support
-        // toggleActions: 'play none none reverse'
-      }
-    });
-
-    // Animate elements
-    socialTl
-      .to('.social-orbits', {
-        y: 0,
+      textTl.to(chars, {
         opacity: 1,
-        duration: 1,
-        ease: 'power3.out'
-      })
-      .to('.social', {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: 'power3.out'
-      }, '-=0.5')
-      .to(['.linkedin', '.instagram'], {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: 'power3.out'
-      }, '-=0.5');
+        duration: 0.8,
+        stagger: {
+          amount: 0.5,
+          from: "random",
+          ease: "power2.inOut"
+        }
+      });
 
-    // Add continuous floating animation
-    gsap.to(['.social-orbits', '.social'], {
-      y: '-=20',
-      duration: 2,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut'
-    });
+      // Social elements reveal animation
+      const socialTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.social-section',
+          start: 'top 60%',
+          toggleActions: 'play none none none'
+        }
+      });
 
-    gsap.to('.linkedin', {
-      y: '-=10',
-      duration: 3,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut'
-    });
+      socialTl
+        .to('.social-orbits', {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out'
+        })
+        .to('.social', {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: 'power3.out'
+        }, '-=0.5')
+        .to(['.linkedin', '.instagram'], {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          stagger: 0.2,
+          ease: 'power3.out'
+        }, '-=0.5');
 
-    gsap.to('.instagram', {
-      y: '-=10',
-      duration: 2.5,
-      repeat: -1,
-      yoyo: true,
-      ease: 'power1.inOut',
-      delay: 0.5
-    });
-
-    return () => {
-      text.revert();
-      // Cleanup
-      ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-    };
-  }, []);
+      return () => text.revert();
+    }
+  });
 
   return (
-    <section className='social-section'>
-    <div className="socialglow1"></div>
-    <div className="socialglow2"></div>
+    <section className='social-section' ref={containerRef}>
+      <div className="socialglow1"></div>
+      <div className="socialglow2"></div>
       <div className="social-container">
         <h1 ref={headingRef}>Follow our journey</h1>
         <div className="social-links">

@@ -1,133 +1,91 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import "./portfoliosection.css"
 import Portfolioitem from './Portfolioitem'
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Portfoliosection = () => {
-  useEffect(() => {
-    const handleAnimations = () => {
-      if (window.innerWidth > 1024) {
-        const content = document.querySelector('.portfolio-content, .portfolio-content-mobile');
+  useGSAP(() => {
+    const mm = gsap.matchMedia();
+    
+    mm.add("(min-width: 1024px)", () => {
+      gsap.set('.dial', {
+        opacity: 0,
+        scale: 0.8
+      });
+      
+      gsap.set('.portfolio-svg path:not([mask])', { 
+        strokeDasharray: (i, el) => el.getTotalLength(),
+        strokeDashoffset: (i, el) => -el.getTotalLength()
+      });
 
-        // Separate timeline for dial animation
-        const dialTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: '.portfolio-section',
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse'
-          }
-        });
+      gsap.set('.portfolio-svg circle', { scale: 0 });
+      
+      gsap.set(['.portfolio-title-text', '.portfolio-title-description'], {
+        y: 50,
+        opacity: 0
+      });
 
-        // Set initial state for dial
-        gsap.set('.dial', {
-          opacity: 0,
-          scale: 0.8
-        });
+      // Create animations
+      const titleTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '.portfolio-section',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none none'
+        }
+      });
 
-        // Set initial states for SVG elements
-        const svgTl = gsap.timeline({
-          scrollTrigger: {
-            trigger: '.portfolio-section',
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none reverse'
-          }
-        });
+      titleTl
+        .to('.portfolio-svg path:not([mask])', {
+          strokeDashoffset: 0,
+          duration: 1,
+          ease: "power2.out",
+          stagger: 0.2
+        })
+        .to('.portfolio-svg circle', {
+          scale: 1,
+          duration: 1,
+          ease: "back.out(1.7)",
+        }, "-=0.5")
+        .to(['.portfolio-title-text', '.portfolio-title-description'], {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power3.out",
+          stagger: 0.3
+        }, "-=1.5");
 
-        svgTl
-        gsap.set('.portfolio-svg path:not([mask])', { 
-          strokeDasharray: function(i, el) {
-            return el.getTotalLength();
-          },
-          strokeDashoffset: function(i, el) {
-            return -el.getTotalLength();
-          }
-        });
+      // Separate dial animation
+      gsap.timeline({
+        scrollTrigger: {
+          trigger: '.portfolio-section',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          toggleActions: 'play none none reverse'
+        }
+      })
+      .to('.dial', {
+        opacity: 0.15,
+        scale: 1,
+        duration: 1.5,
+        ease: "power2.out",
+      })
+      .to('.dial', {
+        y: 20,
+        rotation: 10,
+        duration: 5,
+        ease: "power1.inOut",
+        yoyo: true,
+        repeat: -1
+      }, "-=0.5");
+    });
 
-        gsap.set('.portfolio-svg circle', { 
-          scale: 0,
-        });
-
-        // gsap.set('.portfolio-svg path[mask]', { 
-        //   opacity: 0
-        // });
-
-        gsap.set(['.portfolio-title-text', '.portfolio-title-description'], {
-          y: 50,
-          opacity: 0
-        });
-
-        // Main timeline for title animations
-        const titleT1 = gsap.timeline({
-          scrollTrigger: {
-            trigger: '.portfolio-section',
-            start: 'top 80%',
-            end: 'bottom 20%',
-            toggleActions: 'play none none none'
-          }
-        });
-
-        titleT1
-          .to('.portfolio-svg path:not([mask])', {
-            strokeDashoffset: 0,
-            duration: 1,
-            ease: "power2.out",
-            stagger: 0.2
-          })
-          .to('.portfolio-svg circle', {
-            scale: 1,
-            duration: 1,
-            ease: "back.out(1.7)",
-          }, "-=0.5")
-          // .to('.portfolio-svg path[mask]', {
-          //   opacity: 1,
-          //   duration: 0.5,
-          //   ease: "power2.inOut",
-          //   stagger: {
-          //     amount: 0.5,
-          //     from: "start"
-          //   }
-          // }, "-=0.5")
-          .to('.portfolio-title-text', {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out"
-          }, "-=1.5")
-          .to('.portfolio-title-description', {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out"
-          }, "-=1.2");
-
-        // Dial animation
-        dialTl
-          .to('.dial', {
-            opacity: 0.15,
-            scale: 1,
-            duration: 1.5,
-            ease: "power2.out",
-          })
-          .to('.dial', {
-            y: 20,
-            rotation: 10,
-            duration: 5,
-            ease: "power1.inOut",
-            yoyo: true,
-            repeat: -1
-          }, "-=0.5");
-      } else {
-        gsap.killTweensOf('.portfolio-svg path, .portfolio-svg circle, .portfolio-title-text, .portfolio-title-description, .dial');
-        gsap.set('.portfolio-svg path, .portfolio-svg circle, .portfolio-title-text, .portfolio-title-description, .dial', { clearProps: 'all' });
-      }
-    };
-
-    handleAnimations();
+    return () => mm.revert();
   }, []);
 
   return (
