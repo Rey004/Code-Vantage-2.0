@@ -34,12 +34,14 @@
     top: -10px;
     left: -10px;
     rotate: 256deg;
+    animation: fillerBracketFloat 5s ease-in-out infinite;
 }
 
 .filler-bracketpurple{
     bottom: -20px;
-    right: 40px;
+    right: 60px;
     rotate: 245deg;
+    animation: fillerBracketFloat 5s ease-in-out infinite;
 }
 
 .filler-starabove{
@@ -50,16 +52,18 @@
     rotate: 33deg;
     z-index: 3;
     filter: blur(1px);
+    animation: fillerFloat 6s ease-in-out infinite;
 }
 
 .filler-starbelow{
     width: 150px;
     height: auto;
     bottom: -73px;
-    left: -20px;
+    left: -10px;
     rotate: -12deg;
     z-index: 1;
     filter: blur(3px);
+    animation: fillerFloat 6s ease-in-out infinite;
 }
 
 .filler-side-decor-left {
@@ -281,5 +285,28 @@
 
     .filler-side-decor-left svg, .filler-side-decor-right svg {
         width: 35vw;
+    }
+}
+
+@keyframes fillerFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(7px, 7px);
+    }
+    100% {
+        transform: translate(0, 0);
+    }
+}
+@keyframes fillerBracketFloat {
+    0% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(-5px, 1px);
+    }
+    100% {
+        transform: translate(0, 0);
     }
 }

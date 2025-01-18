@@ -1,6 +1,40 @@
-import React from 'react'
+import React, { useRef } from 'react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import SplitType from 'split-type'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Aboutdescription = () => {
+  useGSAP(() => {
+    if (window.innerWidth > 1024) {
+      const splitTypes = document.querySelectorAll('.about-description')
+
+      splitTypes.forEach((char,i) => {
+          const text = new SplitType(char, { types: 'words'})
+
+          gsap.fromTo(text.words, 
+              {
+                  opacity: 0.3
+              },
+              {
+                  opacity:1,
+                  duration: 4,
+                  stagger: 0.1,
+                  scrollTrigger: {
+                      trigger: char,
+                      start: 'top 80%',
+                      end: 'top 20%',
+                      scrub: true,
+                      toggleActions: 'play play reverse reverse'
+                  }
+          })
+      })
+    }
+  })
+
   return (
     <div className="about-description">
                     <ol>

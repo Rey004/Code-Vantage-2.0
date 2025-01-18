@@ -1,6 +1,40 @@
 import React from 'react'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+import SplitType from 'split-type'
+import { useGSAP } from '@gsap/react'
+
+gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(useGSAP);
 
 const Fillertext = () => {
+  useGSAP(() => {
+    if (window.innerWidth > 1024) {
+      const splitTypes = document.querySelectorAll('.filler-text div')
+
+      splitTypes.forEach((char,i) => {
+          const text = new SplitType(char, { types: 'chars'})
+
+          gsap.fromTo(text.chars, 
+              {
+                  opacity: 0.2
+              },
+              {
+                  opacity:1,
+                  duration: 4,
+                  stagger: 0.1,
+                  scrollTrigger: {
+                      trigger: char,
+                      start: 'top 80%',
+                      end: 'top 20%',
+                      scrub: true,
+                      toggleActions: 'play play reverse reverse'
+                  }
+          })
+      })
+    }
+  })
+
   return (
     <div className="filler-text">
         <img className='filler-bracketblue' src="\assets\Bracket Blue.webp" alt="" />
