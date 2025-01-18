@@ -3,7 +3,6 @@ import './socialsection.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import SplitType from 'split-type'
-import { debounce } from 'lodash'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -117,17 +116,10 @@ const Socialsection = memo(() => {
       delay: 0.5
     });
 
-    const updateScrollTrigger = debounce(() => {
-      ScrollTrigger.refresh();
-    }, 200);
-
-    window.addEventListener('resize', updateScrollTrigger);
-
     return () => {
       text.revert();
       // Cleanup
       ScrollTrigger.getAll().forEach(trigger => trigger.kill());
-      window.removeEventListener('resize', updateScrollTrigger);
     };
   }, []);
 

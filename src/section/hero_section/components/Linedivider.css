@@ -24,14 +24,14 @@
 
 @media (max-width: 768px) {
     .line-divider{
-        padding: 0vh 0 0 0;
+        padding: 0 0 0 0;
         height: 35vw;
     }
 }
 
 @media (max-width: 480px) {
     .line-divider{
-        height: 60vw;
+        height: 40vw;
     }
     .line-divider-white{
         width: 0.190vw;

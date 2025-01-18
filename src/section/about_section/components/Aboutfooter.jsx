@@ -2,13 +2,13 @@ import React from 'react'
 
 const Aboutfooter = () => {
   return (
-    <div class="about-footer">
+    <div className="about-footer">
         <span>Code Vantage</span>
         <ul>
-            <li class="about-footer-pc-items">UTF-8</li>
-            <li class="about-footer-pc-items">HTML</li>
+            <li className="about-footer-pc-items">UTF-8</li>
+            <li className="about-footer-pc-items">HTML</li>
             <li><svg width="16" height="10" viewBox="0 0 256 169" fill="none"
-                    xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
                     <rect width="256" height="169" fill="url(#pattern0_99_2)" />
                     <defs>
                         <pattern id="pattern0_99_2" patternContentUnits="objectBoundingBox" width="1"
