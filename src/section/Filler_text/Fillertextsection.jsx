@@ -24,11 +24,6 @@ const Fillertextsection = () => {
         scale: 0,
         opacity: 0 
       });
-      
-      gsap.set('.filler-side-decor path[mask]', { 
-        opacity: 0,
-        scale: 0.8
-      });
 
       const svgTl = gsap.timeline({
         scrollTrigger: {
@@ -55,16 +50,6 @@ const Fillertextsection = () => {
           duration: 0.8,
           ease: "elastic.out(1, 0.3)",
         })
-        .to('.filler-side-decor path[mask]', {
-          opacity: 1,
-          scale: 1,
-          duration: 0.7,
-          ease: "power2.inOut",
-          stagger: {
-            amount: 0.8,
-            from: "edges"
-          }
-        }, "-=0.8");
     });
 
     return () => mm.revert();

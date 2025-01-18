@@ -76,6 +76,7 @@ nav{
 
   a:hover{
     background: linear-gradient(to right, #989fe0, #d6848b);
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 700;
