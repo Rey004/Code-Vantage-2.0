@@ -8,6 +8,17 @@
 
 /* For clickable elements */
 a:hover, button:hover, input[type="submit"]:hover, input[type="button"]:hover, 
-.clickable:hover, [role="button"]:hover, .linkedin:hover, .instagram:hover{
+.clickable:hover, [role="button"]:hover, .linkedin:hover, .instagram:hover {
   cursor: url('/assets/link.cur'), pointer !important;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
