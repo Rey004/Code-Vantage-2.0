@@ -13,6 +13,9 @@ import Loader from './components/Loader'
 // import Lenis from 'lenis'
 // import 'lenis/dist/lenis.css'
 import './globals.css'
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/react';
+
 
 function App() {
 
@@ -31,6 +34,8 @@ function App() {
       <Faqsection />
       </main>
       <Footer />
+      <Analytics />
+      <SpeedInsights />
     </>
   )
 }
