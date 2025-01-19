@@ -22,9 +22,9 @@ const Footer = () => {
                     <img src="/assets/Icon Logo.webp" alt="" className="footer-icon-logo" />
                     <div className="emails">
                         <h2 className='email-title'>Email</h2>
-                        <a href="" className="email">contact@codevantage.in</a>
-                        <a href="" className="email">revanshu@codevantage.in</a>
-                        <a href="" className="email">aaditya@codevantage.in</a>
+                        <a href="mailto:contact@codevantage.in" className="email">contact@codevantage.in</a>
+                        <a href="mailto:revanshu@codevantage.in" className="email">revanshu@codevantage.in</a>
+                        <a href="mailto:aaditya@codevantage.in" className="email">aaditya@codevantage.in</a>
                     </div>
                 </div>
                 <p className='rights'>© 2024 codevantage.in All rights reserved.</p>

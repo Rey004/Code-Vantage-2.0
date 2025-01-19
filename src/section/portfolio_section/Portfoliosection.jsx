@@ -111,7 +111,7 @@ const Portfoliosection = () => {
             {/* DESKTOP PORTFOLIO CONTENT */}
             <div className='portfolio-content'>
                  <Portfolioitem name="Freak Lifestyle" link="https://freaklifestyle.com" image="/assets/Freak-Lifestyle.webp" />
-                 <Portfolioitem name="Rey Ventures" link="https://rey004.github.io/Rey-Ventures/" image="/assets/Rey-Ventures.webp" />
+                 <Portfolioitem name="Code Vantage" link="https://old.codevantage.in/" image="/assets/codevantage-old.webp" />
             </div>
 
             {/* MOBILE PORTFOLIO TITLE */}
@@ -131,7 +131,7 @@ const Portfoliosection = () => {
             {/* MOBILE PORTFOLIO CONTENT */}
             <div className='portfolio-content-mobile'>
                  <Portfolioitem name="Freak Lifestyle" link="https://freaklifestyle.com" image="/assets/Freak-Lifestyle.webp" />
-                 <Portfolioitem name="Rey Ventures" link="https://rey004.github.io/Rey-Ventures/" image="/assets/Rey-Ventures.webp" />
+                 <Portfolioitem name="Code Vantage" link="https://old.codevantage.in/" image="/assets/codevantage-old.webp" />
             </div>
         </div>
     </section>
