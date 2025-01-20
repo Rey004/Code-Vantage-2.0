@@ -33,12 +33,12 @@ const handleNavClick = (e, targetId) => {
           <li><a onClick={(e) => handleNavClick(e, 'process')}>Process</a></li>
           <li><a onClick={(e) => handleNavClick(e, 'faqs')}>FAQs</a></li>
           <li className="mobile-button">
-            <Button name="SCHEDULE" link="#contact" />
+            <Button name="SCHEDULE" />
           </li>
         </ul>
 
         <div className="desktop-button">
-          <Button name="SCHEDULE" link="#contact" />
+          <Button name="SCHEDULE"/>
         </div>
 
         <div className="hamburger" onClick={toggleMenu}>
