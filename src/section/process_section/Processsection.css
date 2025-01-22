@@ -12,7 +12,7 @@
 .processsectionheading h2{
     display: inline;
     font-family: Nulshock;
-    font-size: clamp(2.5rem, 5vw, 5rem);
+    font-size: clamp(2rem, 5vw, 5rem);
     font-weight: 700;
     line-height: 1.2;
     text-align: center;

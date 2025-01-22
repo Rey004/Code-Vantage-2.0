@@ -41,7 +41,7 @@ body {
   color: white;
   overflow-x: hidden;
   scroll-behavior: smooth;
-  z-index: 1;
+  position: fixed; /* Added to change the scroller to #root which fixed the navlinks not scrolling in mobile issue as well as the scrolltriggers not working properly issue */
 }
 
 #root {

@@ -61,11 +61,13 @@ const Portfolioitem = ({ name, link, image }) => {
   }, []);
 
   return (
-    <a className='portfolio-item' href={link} ref={itemRef}>
-      <div className="portfolio-identity" style={{ backgroundImage: `url(${image})` }}>
-        {name}
-      </div>
-    </a>
+    <div className="portfolio-item-div" ref={itemRef}>
+      <a href={link} target='_blank'>
+        <img src={image} alt={name} />
+        <div className="portfolio-background"></div>
+        <div className="portfolio-name">{name}</div>
+      </a>
+    </div>
   );
 };
 

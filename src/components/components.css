@@ -74,7 +74,7 @@ nav{
     font-family: 'Inter';
   }
 
-  a:hover{
+  nav a:hover{
     background: linear-gradient(to right, #989fe0, #d6848b);
     background-clip: text;
     -webkit-background-clip: text;
@@ -90,7 +90,6 @@ nav{
   .nav-menu {
     position: relative;
     opacity: 1;
-    /* visibility: hidden; */
     transform: translateY(-55px);
     transition: all 0.3s ease;
     transition-delay: 0s;
