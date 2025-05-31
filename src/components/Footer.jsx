@@ -27,7 +27,7 @@ const Footer = () => {
                         <a href="mailto:aaditya@codevantage.in" className="email">aaditya@codevantage.in</a>
                     </div>
                 </div>
-                <p className='rights'>© 2024 codevantage.in All rights reserved.</p>
+                <p className='rights'>© 2025 codevantage.in All rights reserved.</p>
                 <img src="/assets/Star.webp" alt="" className="stardecor" />
             </div>
             <div className="footer-gradient"></div>
