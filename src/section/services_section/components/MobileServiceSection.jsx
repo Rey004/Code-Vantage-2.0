@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import './MobileServiceSection.css';
 
 const MobileServiceSection = ({ cardData }) => {
@@ -39,7 +40,18 @@ const MobileServiceSection = ({ cardData }) => {
         </div>
       ))}
     </div>
-  );
+  )
+};
+
+MobileServiceSection.propTypes = {
+  cardData: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      image: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default MobileServiceSection;

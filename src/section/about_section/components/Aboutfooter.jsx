@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Aboutfooter = () => {
   return (
     <div className="about-footer">

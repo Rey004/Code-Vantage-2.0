@@ -1,4 +1,4 @@
-import React from 'react'
+import PropTypes from 'prop-types';
 
 const Timelineitem = (props) => {
 return (
@@ -32,7 +32,15 @@ return (
             </div>
         </div>
     </div>
-)
+);
 }
 
-export default Timelineitem
+Timelineitem.propTypes = {
+    number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+    step: PropTypes.string.isRequired,
+    heading: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
+};
+
+export default Timelineitem;

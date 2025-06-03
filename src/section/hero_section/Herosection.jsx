@@ -1,4 +1,3 @@
-import React from 'react'
 import Herotext from './components/Herotext'
 import Herostar from './components/Herostar'
 import Herosidedecorleft from './components/Herosidedecorleft'
@@ -32,7 +31,6 @@ const Herosection = () => {
         scale: 0.8
       });
 
-      // Enhanced animation sequence
       gsap.timeline({
         defaults: { ease: "power3.out" }
       })

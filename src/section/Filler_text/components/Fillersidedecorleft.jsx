@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Fillersidedecorleft = () => {
   return (
     <svg className='filler-side-decor' width="336" height="51" viewBox="0 0 336 51" fill="none" xmlns="http://www.w3.org/2000/svg">

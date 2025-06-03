@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Aboutnav = () => {
   return (
     <div className="about-nav">

@@ -1,5 +1,5 @@
-import React from 'react'
 import './Herotext.css'
+import PropTypes from 'prop-types'
 
 const HeroText = (props) => {
   return (
@@ -29,7 +29,11 @@ const HeroText = (props) => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default HeroText
+HeroText.propTypes = {
+  textType: PropTypes.string
+}
+
+export default HeroText;

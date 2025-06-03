@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import Fillersidedecorleft from './components/Fillersidedecorleft';
 import Fillersidedecorright from './components/Fillersidedecorright';
 import Fillertext from './components/Fillertext';

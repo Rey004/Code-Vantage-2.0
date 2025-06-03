@@ -5,7 +5,6 @@
     position: relative;
     padding: 20vh 5%;
     margin: 0 auto;
-    /* display: grid; */
     grid-template-rows: repeat(var(--cards-count), var(--card-height));
     gap: 10vh 0;
     justify-content: center;
@@ -15,7 +14,6 @@
 
 .mobile-service-card {
     position: sticky;
-    top: 30vh;
     padding: 50px 30px;
     gap: 20px;
     background-color: rgba(0, 0, 0, 0.2);
@@ -33,18 +31,19 @@
     overflow: hidden;
 }
 
-/* Add styles for cards that are behind the current one */
-.mobile-service-card:not(:last-child) {
+.mobile-service-card:nth-child(1){
     z-index: 1;
+    top: 27vh;
+    margin-bottom: 10vh;
 }
-
-.mobile-service-card + .mobile-service-card {
+.mobile-service-card:nth-child(2){
     z-index: 2;
+    top: 32vh;
+    margin-bottom: 5vh;
 }
-
-/* Create the effect of cards going behind */
-.mobile-service-card:not(:first-child) {
-    margin-top: 50px;
+.mobile-service-card:nth-child(3){
+    z-index: 3;
+    top: 37vh;
 }
 
 .mobile-card-image {
@@ -104,7 +103,6 @@
     pointer-events: none;
 }
 
-/* Tablet and Small Laptop Styles */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .mobile-services {
         padding: 10vh 8vw;
@@ -152,7 +150,6 @@
 
 }
 
-/* Mobile styles remain unchanged */
 @media screen and (max-width: 767px) {
     .mobile-services {
         display: grid;
@@ -172,7 +169,7 @@
     }
 
     .mobile-card-image {
-        position: absolute;  /* Keep absolute for mobile */
+        position: absolute;
         top: -15%;
         right: -15%;
         width: clamp(250px, 60vw, 400px);
@@ -201,7 +198,6 @@
     }
 }
 
-/* Extra small devices */
 @media screen and (max-width: 380px) {
     .mobile-services {
         padding: 12vh 15px;

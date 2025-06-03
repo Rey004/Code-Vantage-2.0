@@ -36,7 +36,7 @@
     right: 0;
     bottom: 0;
     background-color: #000000;
-    opacity: 0;  /* Initial state: invisible */
+    opacity: 0;
     z-index: 1;
     border-radius: 20px;
     transition: opacity 0.3s ease-in-out;
@@ -55,18 +55,18 @@
     align-items: center;
     font-size: 2em;
     z-index: 2;
-    opacity: 0;  /* Initial state: invisible */
+    opacity: 0;
     transition: opacity 0.3s ease-in-out;
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Add these hover states */
+
 .portfolio-item-div a:hover .portfolio-background {
-    opacity: 0.6;  /* Visible on hover */
+    opacity: 0.6;
 }
 
 .portfolio-item-div a:hover .portfolio-name {
-    opacity: 1;  /* Visible on hover */
+    opacity: 1;
 }
 
 @media (max-width: 1024px) {

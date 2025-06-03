@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import Navbar from './components/Navbar'
 import Herosection from './section/hero_section/Herosection'
 import Aboutsection from './section/about_section/Aboutsection'
@@ -10,8 +9,6 @@ import Faqsection from './section/faq_section/Faqsection'
 import Processsection from './section/process_section/Processsection'
 import Footer from './components/Footer'
 import Loader from './components/Loader'
-// import Lenis from 'lenis'
-// import 'lenis/dist/lenis.css'
 import './globals.css'
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';

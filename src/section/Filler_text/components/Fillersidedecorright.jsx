@@ -1,8 +1,4 @@
-import React from 'react'
-
 const Fillersidedecorright = () => {
-  
-
   return (
     <svg className='filler-side-decor' width="284" height="107" viewBox="0 0 284 107" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="5" cy="102" r="5" transform="rotate(-90 5 102)" fill="#D9D9D9" fillOpacity="0.3"/>

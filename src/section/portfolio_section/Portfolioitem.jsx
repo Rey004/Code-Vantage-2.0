@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import PropTypes from 'prop-types';
 import './portfolioitem.css';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
@@ -68,7 +69,13 @@ const Portfolioitem = ({ name, link, image }) => {
         <div className="portfolio-name">{name}</div>
       </a>
     </div>
-  );
+    )
+};
+
+Portfolioitem.propTypes = {
+  name: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
 
 export default Portfolioitem;

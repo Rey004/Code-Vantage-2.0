@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+/* eslint-disable react/no-unescaped-entities */
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import SplitType from 'split-type'
@@ -12,7 +12,7 @@ const Aboutdescription = () => {
     if (window.innerWidth > 1024) {
       const splitTypes = document.querySelectorAll('.about-description')
 
-      splitTypes.forEach((char,i) => {
+      splitTypes.forEach((char) => {
           const text = new SplitType(char, { types: 'words'})
 
           gsap.fromTo(text.words, 

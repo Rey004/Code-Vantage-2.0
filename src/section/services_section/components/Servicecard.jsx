@@ -1,6 +1,7 @@
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
+import PropTypes from 'prop-types';
 import "./Servicecard.css"
 
 const Servicecard = (props) => {
@@ -137,4 +138,13 @@ const Servicecard = (props) => {
   );
 };
 
-export default Servicecard
+Servicecard.propTypes = {
+  isActive: PropTypes.bool.isRequired,
+  onHover: PropTypes.func.isRequired,
+  onLeave: PropTypes.func.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired
+};
+
+export default Servicecard;

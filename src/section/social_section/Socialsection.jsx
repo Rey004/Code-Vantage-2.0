@@ -1,4 +1,4 @@
-import React, { useRef, memo } from 'react'
+import { useRef, memo } from 'react'
 import './socialsection.css'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -103,5 +103,7 @@ const Socialsection = memo(() => {
     </section>
   )
 })
+
+Socialsection.displayName = 'Socialsection';
 
 export default Socialsection

@@ -1,4 +1,4 @@
-import React from 'react'
+/* eslint-disable react/no-unescaped-entities */
 import './faqsection.css'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
@@ -36,7 +36,6 @@ const Faqsection = () => {
         opacity: 0
       });
 
-      // Animation timeline
       const faqSvgTl = gsap.timeline({
         scrollTrigger: {
           trigger: '.faqsection',

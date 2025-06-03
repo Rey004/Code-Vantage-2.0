@@ -1,4 +1,3 @@
-import React from 'react'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 import SplitType from 'split-type'
@@ -12,7 +11,7 @@ const Fillertext = () => {
     if (window.innerWidth > 1024) {
       const splitTypes = document.querySelectorAll('.filler-text div')
 
-      splitTypes.forEach((char,i) => {
+      splitTypes.forEach((char) => {
           const text = new SplitType(char, { types: 'chars'})
 
           gsap.fromTo(text.chars, 
@@ -50,4 +49,4 @@ const Fillertext = () => {
   )
 }
 
-export default Fillertext
+export default Fillertext;

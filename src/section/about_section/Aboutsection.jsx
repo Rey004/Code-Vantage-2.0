@@ -1,4 +1,3 @@
-import React from 'react'
 import Aboutnav from './components/Aboutnav';
 import Aboutdescription from './components/Aboutdescription'
 import Aboutfooter from './components/Aboutfooter';

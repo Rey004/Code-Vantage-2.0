@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Servicecard from './components/Servicecard';
 import MobileServiceSection from './components/MobileServiceSection';
 import './Servicesection.css';
@@ -12,9 +12,15 @@ const CARD_DATA = [
   },
   { 
     id: 2, 
-    title: 'Web Design', 
+    title: 'UI/UX Design', 
     content: 'We craft eye-catching and unique designs using Figma, tailored to represent your brand perfectly. Our design process ensures your website is not only visually appealing but also provides an intuitive user experience.',
     image: '/assets/web-design-service.webp'
+  },
+  { 
+    id: 3, 
+    title: 'App Development', 
+    content: 'We develop mobile applications for iOS and Android platforms, creating user-friendly and feature-rich apps that engage your audience and drive business growth.',
+    image: '/assets/web-development-service.webp'
   }
 ];
 

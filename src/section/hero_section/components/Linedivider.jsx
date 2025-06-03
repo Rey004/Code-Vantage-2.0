@@ -1,4 +1,3 @@
-import React from 'react'
 import "./Linedivider.css"
 
 const Linedivider = () => {
