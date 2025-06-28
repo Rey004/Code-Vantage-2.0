@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState } from 'react';
 import Servicecard from './components/Servicecard';
 import MobileServiceSection from './components/MobileServiceSection';
 import './Servicesection.css';
@@ -26,27 +26,14 @@ const CARD_DATA = [
 
 const Servicesection = () => {
   const [activeCard, setActiveCard] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const timeoutRef = useRef(null);
 
-  const handleCardTransition = (index) => {
-    if (isTransitioning) return;
-    
-    setIsTransitioning(true);
+  const handleCardHover = (index) => {
     setActiveCard(index);
-    
-    timeoutRef.current = setTimeout(() => {
-      setIsTransitioning(false);
-    });
   };
 
-  useEffect(() => {
-    return () => {
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-    };
-  }, []);
+  const handleCardLeave = () => {
+    setActiveCard(0);
+  };
 
   return (
     <section className='servicesection' id='services'>
@@ -59,8 +46,8 @@ const Servicesection = () => {
             content={card.content}
             image={card.image}
             isActive={index === activeCard}
-            onHover={() => handleCardTransition(index)}
-            onLeave={() => handleCardTransition(0)}
+            onHover={() => handleCardHover(index)}
+            onLeave={handleCardLeave}
           />
         ))}
       </div>

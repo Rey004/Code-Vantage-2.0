@@ -20,13 +20,14 @@ const Fillertext = () => {
               },
               {
                   opacity:1,
-                  duration: 4,
-                  stagger: 0.1,
+                  duration: 2.5,
+                  ease: "power2.out",
+                  stagger: 0.05,
                   scrollTrigger: {
                       trigger: char,
                       start: 'top 80%',
                       end: 'top 20%',
-                      scrub: true,
+                      scrub: 1.5,
                       toggleActions: 'play play reverse reverse'
                   }
           })

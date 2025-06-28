@@ -1,5 +1,8 @@
+/* Performance optimizations */
 * {
   cursor: url('/assets/link.cur'), auto !important;
+  /* Add performance optimizations */
+  box-sizing: border-box;
 }
 
 *:hover {
@@ -12,6 +15,7 @@ a:hover, button:hover, input[type="submit"]:hover, input[type="button"]:hover,
   cursor: url('/assets/link.cur'), pointer !important;
 }
 
+/* Optimize scrollbars */
 body::-webkit-scrollbar {
   display: none;
 }
@@ -19,4 +23,36 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none;
   scrollbar-width: none;
+  /* Optimize rendering */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeSpeed;
+  /* Prevent layout shifts */
+  overflow-x: hidden;
+}
+
+/* Performance optimizations for animations */
+[data-gsap] {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+/* Optimize images */
+img {
+  max-width: 100%;
+  height: auto;
+  image-rendering: optimizeQuality;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

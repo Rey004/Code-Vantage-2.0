@@ -13,52 +13,44 @@ const Herosection = () => {
   useGSAP(() => {
     const mm = gsap.matchMedia();
     
-    mm.add("(min-width: 1024px)", () => {
+    mm.add("(min-width: 1024px) and (prefers-reduced-motion: no-preference)", () => {
+      // Simple path animation
+      const pathElements = document.querySelectorAll('.hero-side-decor path:not([mask])');
+      const circleElements = document.querySelectorAll('.hero-side-decor circle');
+
+      if (pathElements.length === 0 && circleElements.length === 0) return;
+
       // Initial setup
-      gsap.set('.hero-side-decor path:not([mask])', { 
+      gsap.set(pathElements, { 
         strokeDasharray: (i, el) => el.getTotalLength(),
         strokeDashoffset: (i, el) => -el.getTotalLength(),
         opacity: 0
       });
 
-      gsap.set('.hero-side-decor circle', { 
+      gsap.set(circleElements, { 
         scale: 0,
-        opacity: 0 
-      });
-      
-      gsap.set('.hero-side-decor path[mask]', { 
-        opacity: 0,
-        scale: 0.8
+        opacity: 0
       });
 
-      gsap.timeline({
-        defaults: { ease: "power3.out" }
+      // Simple timeline
+      const tl = gsap.timeline({
+        defaults: { ease: "power2.out" }
+      });
+
+      tl.to(pathElements, {
+        strokeDashoffset: 0,
+        opacity: 1,
+        duration: 1.2,
+        stagger: 0.1
       })
-        .to('.hero-side-decor path:not([mask])', {
-          strokeDashoffset: 0,
-          opacity: 1,
-          duration: 1.2,
-          stagger: {
-            each: 0.15,
-            from: "center"
-          }
-        })
-        .to('.hero-side-decor circle', {
-          scale: 1,
-          opacity: 1,
-          duration: 0.6,
-          ease: "elastic.out(1, 0.3)",
-        }, "-=0.8")
-        .to('.hero-side-decor path[mask]', {
-          opacity: 1,
-          scale: 1,
-          duration: 0.5,
-          ease: "power2.inOut",
-          stagger: {
-            amount: 0.3,
-            from: "start"
-          }
-        }, "<0.2");
+      .to(circleElements, {
+        scale: 1,
+        opacity: 1,
+        duration: 0.6,
+        ease: "back.out(1.2)"
+      }, "-=0.5");
+
+      return () => tl.kill();
     });
 
     return () => mm.revert();

@@ -15,7 +15,6 @@
 .services-section-container {
     display: flex;
     justify-content: center;
-    height: 70vh;
     gap: 30px;
     padding: 20px;
     background-color: transparent;
@@ -69,3 +68,4 @@
         -webkit-text-stroke: 0.7px #6e6e6e;
     }
 }
+

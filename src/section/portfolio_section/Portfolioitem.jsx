@@ -63,8 +63,17 @@ const Portfolioitem = ({ name, link, image }) => {
 
   return (
     <div className="portfolio-item-div" ref={itemRef}>
-      <a href={link} target='_blank'>
-        <img src={image} alt={name} />
+      <a href={link} target='_blank' rel="noopener noreferrer">
+        <img 
+          src={image} 
+          alt={name} 
+          loading="lazy" 
+          decoding="async"
+          onLoad={(e) => {
+            e.target.style.opacity = '1';
+          }}
+          style={{ opacity: 0, transition: 'opacity 0.3s ease' }}
+        />
         <div className="portfolio-background"></div>
         <div className="portfolio-name">{name}</div>
       </a>

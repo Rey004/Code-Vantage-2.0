@@ -14,8 +14,8 @@
     border: 1.5px solid rgba(255, 255, 255, 0.3);
     background-color: rgba(255, 255, 255, 0.08); 
     -webkit-tap-highlight-color: transparent;
-  user-select: none;
-  -webkit-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 .card-image {
@@ -68,7 +68,7 @@
 
 .card-content {
     position: absolute;
-    width: 400px;
+    width: 500px;
     height: 100%;
     padding: 60px 40px;
     display: none;
@@ -90,7 +90,7 @@
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    width: 45vw;
+    width: min(45vw);
 }
 
 .card-content p {
@@ -98,7 +98,7 @@
     line-height: 1.6;
     font-size: 1rem;
     margin: 0;
-    width: 45vw;
+    width: min(45vw, 700px);
     padding-right: 20px;
 }
 
@@ -145,3 +145,10 @@
         transform: rotate(0);
     }
 }
+
+@media screen and (min-width: 1920px) {
+    .card-content {
+        width: 550px;
+    }
+}
+

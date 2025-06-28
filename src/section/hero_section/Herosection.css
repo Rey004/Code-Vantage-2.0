@@ -2,36 +2,45 @@
     position: absolute;
     width: 60%;
     height: auto;
-    filter: blur(200px);
-    opacity: 0.35;
+    filter: blur(150px);
+    opacity: 0.25;
     aspect-ratio: 1;
     background: radial-gradient(circle, #345BE7,rgba(0, 0, 0, 0));
     top: -50%;
     right: -15%;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .heroglow2{
     position: absolute;
     width: 50%;
     height: auto;
-    filter: blur(200px);
-    opacity: 0.35;
+    filter: blur(150px);
+    opacity: 0.25;
     aspect-ratio: 1;
     background: radial-gradient(circle, #D452FF,rgba(0, 0, 0, 0));
     bottom: -20%;
     left: -20%;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .heroglow3{
     position: absolute;
     width: 50%;
     height: auto;
-    filter: blur(200px);
-    opacity: 0.2;
+    filter: blur(150px);
+    opacity: 0.15;
     aspect-ratio: 1;
     background: radial-gradient(circle, #ff8800,rgba(0, 0, 0, 0));
     bottom: -80%;
     right: -20%;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 #hero{
@@ -48,6 +57,13 @@
     }
 }
 
+@media screen and (max-width: 1024px) {
+    .heroglow1, .heroglow2, .heroglow3 {
+        filter: blur(100px);
+        opacity: 0.2;
+    }
+}
+
 @media screen and (max-width: 768px){
     .heroglow1{
         filter: blur(120px);
@@ -59,6 +75,10 @@
         width: 70%;
         bottom: -5%;
         left: -30%;
+    }
+    .heroglow1, .heroglow2, .heroglow3 {
+        filter: blur(80px);
+        opacity: 0.15;
     }
 }
 
@@ -81,5 +101,16 @@
         bottom: -80%;
         right: -20%;
         opacity: 0.25;
+    }
+    .heroglow1, .heroglow2, .heroglow3 {
+        filter: blur(60px);
+        opacity: 0.1;
+    }
+}
+
+/* Disable effects for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .heroglow1, .heroglow2, .heroglow3 {
+        display: none;
     }
 }

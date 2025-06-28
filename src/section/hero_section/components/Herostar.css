@@ -22,18 +22,33 @@ spline-viewer {
     width: 100%;
     height: 100vh;
     border: none;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    /* Optimize for 3D rendering */
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    /* Reduce quality on low-end devices */
+    image-rendering: optimizeSpeed;
+    image-rendering: -webkit-optimize-contrast;
 }
 
 .hero-image {
-    display: none;
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    will-change: transform, opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 @media (max-width: 768px) {
     spline-viewer {
-        display: none;
+        display: none !important;
     }
 
     .hero-image {
@@ -60,7 +75,18 @@ spline-viewer {
     }
 
     spline-viewer {
-        display: none;
+        display: none !important;
+    }
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    spline-viewer {
+        display: none !important;
+    }
+    
+    .hero-image {
+        display: block !important;
     }
 }
 

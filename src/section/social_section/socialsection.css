@@ -140,21 +140,27 @@
     position: absolute;
     width: 50%;
     height: auto;
-    filter: blur(200px);
-    opacity: 0.35;
+    filter: blur(120px);
+    opacity: 0.25;
     aspect-ratio: 1;
     background: radial-gradient(circle, #345BE7,rgba(0, 0, 0, 0));
     right: -20%;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 .socialglow2{
     position: absolute;
     width: 50%;
     height: auto;
-    filter: blur(200px);
+    filter: blur(120px);
     background: radial-gradient(circle, #D452FF,rgba(0, 0, 0, 0));
-    opacity: 0.35;
+    opacity: 0.25;
     aspect-ratio: 1;
     left: -20%;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 @media (max-width: 1200px) {

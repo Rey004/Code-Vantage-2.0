@@ -106,7 +106,7 @@
     position: absolute;
     width: 50%;
     height: auto;
-    filter: blur(200px);
+    filter: blur(120px);
     opacity: 0.35;
     aspect-ratio: 1;
     background: radial-gradient(circle, #D452FF,rgba(0, 0, 0, 0));
@@ -118,7 +118,7 @@
     position: absolute;
     width: 60%;
     height: auto;
-    filter: blur(200px);
+    filter: blur(120px);
     opacity: 0.35;
     aspect-ratio: 1;
     background: radial-gradient(circle, #345BE7,rgba(0, 0, 0, 0));
