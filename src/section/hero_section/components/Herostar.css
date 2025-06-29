@@ -25,25 +25,20 @@ spline-viewer {
     will-change: transform, opacity;
     transform: translateZ(0);
     backface-visibility: hidden;
-    /* Optimize for 3D rendering */
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    /* Reduce quality on low-end devices */
     image-rendering: optimizeSpeed;
     image-rendering: -webkit-optimize-contrast;
 }
 
 .hero-image {
-    display: block;
+    display: none;
     width: 100%;
     height: 100%;
     object-fit: cover;
     will-change: transform, opacity;
     transform: translateZ(0);
     backface-visibility: hidden;
-    position: absolute;
-    top: 0;
-    left: 0;
 }
 
 @media (max-width: 768px) {
@@ -79,7 +74,6 @@ spline-viewer {
     }
 }
 
-/* Reduce motion for users who prefer it */
 @media (prefers-reduced-motion: reduce) {
     spline-viewer {
         display: none !important;
