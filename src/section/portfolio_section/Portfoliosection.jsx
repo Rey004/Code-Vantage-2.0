@@ -108,7 +108,7 @@ const Portfoliosection = () => {
             <div className='portfolio-content'>
                  <Portfolioitem name="Freak Lifestyle" link="https://freaklifestyle.com" image="/assets/Freak-Lifestyle.webp" />
                  <Portfolioitem name="Code Vantage" link="https://old.codevantage.in/" image="/assets/codevantage-old.webp" />
-                 <Portfolioitem name="Vibhas Gahankar's Academy of Music" link="  " image="/assets/vibhasgahankarsacademyofmusic.webp" />
+                 <Portfolioitem name="Vibhas Gahankar's Academy of Music" link="https://vibhasgahankarsacademyofmusic.com" image="/assets/vibhasgahankarsacademyofmusic.webp" />
                  <Portfolioitem name="Revanshu Portfolio" link="https://revanshu.me" image="/assets/revanshu-portfolio-website.webp" />
             </div>
 
